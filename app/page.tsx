@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [videoActive, setVideoActive] = useState(false);
   const videoSectionRef = useRef<HTMLDivElement | null>(null);
   const navLinks = [
@@ -39,24 +40,48 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileNavOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
       <nav className="fixed top-0 left-0 w-full z-50">
         <div className="container mx-auto px-6 pt-6">
           <div className="flex flex-col gap-4 rounded-[2.75rem] border border-white/15 bg-secondary/70 px-6 py-4 shadow-[0_32px_90px_rgba(15,23,42,0.55)] backdrop-blur-2xl lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-primary shadow-inner shadow-black/30">
-                <span className="material-symbols-outlined text-3xl">air</span>
+            <div className="flex w-full items-center justify-between gap-4 lg:w-auto lg:justify-start">
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-primary shadow-inner shadow-black/30">
+                  <span className="material-symbols-outlined text-3xl">air</span>
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-white tracking-tight">O2 Airflow</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/60">Masterhouse</p>
+                </div>
+                <span className="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/80 lg:inline-flex">
+                  Premium Care
+                </span>
               </div>
-              <div>
-                <p className="text-xl font-bold text-white tracking-tight">O2 Airflow</p>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">Masterhouse</p>
-              </div>
-              <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/80">
-                Premium Care
-              </span>
+              <button
+                type="button"
+                className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/30 text-white transition hover:border-white hover:bg-white/10 lg:hidden"
+                aria-label="Toggle navigation menu"
+                aria-expanded={mobileNavOpen}
+                onClick={() => setMobileNavOpen((prev) => !prev)}
+              >
+                <span className="material-symbols-outlined text-2xl">
+                  {mobileNavOpen ? "close" : "menu"}
+                </span>
+              </button>
             </div>
-            <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-white/80">
+            <div className="hidden flex-nowrap items-center gap-2 text-sm font-semibold text-white/80 lg:flex lg:justify-center lg:flex-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -68,7 +93,7 @@ export default function Home() {
               ))}
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <button className="flex items-center gap-2 rounded-full bg-primary px-6 py-2 text-sm font-bold text-secondary transition-all hover:shadow-[0_0_25px_rgba(163,230,53,0.7)]">
+              <button className="hidden items-center gap-2 rounded-full bg-primary px-6 py-2 text-sm font-bold text-secondary transition-all hover:shadow-[0_0_25px_rgba(163,230,53,0.7)] lg:flex">
                 <span>Book Consultation</span>
                 <span className="material-symbols-outlined text-base">arrow_outward</span>
               </button>
@@ -76,6 +101,49 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
+      {mobileNavOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm lg:hidden"
+            onClick={() => setMobileNavOpen(false)}
+          />
+          <div className="fixed left-4 right-4 top-24 z-[60] rounded-[2.25rem] border border-white/15 bg-secondary/95 p-6 text-white shadow-[0_25px_80px_rgba(15,23,42,0.85)] lg:hidden">
+            <div className="mb-6 flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-white/60">Navigate</p>
+                <p className="text-2xl font-semibold">O2 Airflow</p>
+              </div>
+              <button
+                type="button"
+                className="rounded-full border border-white/20 p-2 text-white"
+                onClick={() => setMobileNavOpen(false)}
+                aria-label="Close navigation menu"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <a
+                  key={`mobile-${link.href}`}
+                  href={link.href}
+                  onClick={() => setMobileNavOpen(false)}
+                  className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-base font-semibold transition ${link.highlight ? "border-primary bg-white text-secondary" : "border-white/15 bg-white/5"}`}
+                >
+                  {link.label}
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              ))}
+            </div>
+            <div className="mt-6">
+              <button className="w-full rounded-full bg-primary px-6 py-3 text-sm font-bold text-secondary transition hover:bg-primaryDark">
+                Book Consultation
+              </button>
+            </div>
+          </div>
+        </>
+      )}
 
       <header className="relative w-full h-screen min-h-[800px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
