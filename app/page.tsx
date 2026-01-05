@@ -121,7 +121,7 @@ export default function Home() {
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
                       <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre / Medium / Carbon / ULPA / UVC</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / Medium / Carbon / ULPA / UVC</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -190,7 +190,7 @@ export default function Home() {
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
                       <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre / Medium / Carbon / ULPA / UVC</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / Medium / Carbon / ULPA / UVC</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
