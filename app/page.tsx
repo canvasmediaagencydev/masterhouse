@@ -89,7 +89,7 @@ export default function Home() {
               <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
                 ผลิตภัณฑ์ของเรา
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">เครื่องเติมอากาศอากาศ O2 Airflow</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">เครื่องเติมอากาศ O2 Airflow</h2>
             </div>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-md mt-4 md:mt-0 text-right md:text-left">
               ระบบเครื่องเติมอากาศบริสุทธิ์แบบแรงดันบวก (Positive Pressure Ventilation) เพื่อช่วยยกระดับคุณภาพการอยู่อาศัยและสร้างสภาพแวดล้อมที่ดีต่อสุขภาพในระยะยาว
