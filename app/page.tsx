@@ -92,7 +92,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">ระบบฟอกอากาศ O2 Airflow</h2>
             </div>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-md mt-4 md:mt-0 text-right md:text-left">
-              เครื่องฟอกอากาศติดผนังภายนอกอาคาร ไม่เสียพื้นที่ภายใน พร้อมระบบกรองที่มีประสิทธิภาพสูง
+              ระบบเครื่องเติมอากาศบริสุทธิ์แบบแรงดันบวก (Positive Pressure Ventilation) เพื่อช่วยยกระดับคุณภาพการอยู่อาศัยและสร้างสภาพแวดล้อมที่ดีต่อสุขภาพในระยะยาว
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
