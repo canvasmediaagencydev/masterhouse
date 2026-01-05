@@ -400,9 +400,6 @@ export default function Home() {
                 เครื่องเติมอากาศคือระบบระบายอากาศแรงดันบวกที่ดึงอากาศภายนอกเข้ามา ผ่านการกรอง 6 ขั้นตอน (Pre-filter, ดักขน/ฝุ่นหยาบ,
                 Carbon, HEPA, ULPA, UVC) ก่อนอัดลมสะอาดเข้าสู่ห้อง ทำให้เกิดแรงดันบวกดันฝุ่น PM2.5 ออกจากรอยรั่วทุกจุด จึงรักษาค่าฝุ่นในห้องให้ใกล้ 0 ppm ตลอดเวลา
               </p>
-              <p>
-                สามารถแนบอินโฟกราฟิกหรือวิดีโอที่แสดงขั้นตอนการกรองและการดันลมออก เพื่อช่วยให้ลูกค้าเข้าใจกลไกแรงดันบวกชัดเจนขึ้น
-              </p>
             </div>
           </details>
           <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
@@ -514,7 +511,6 @@ export default function Home() {
                 <li>60-70 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 200 cfm ราคา 35,000 บาท</li>
                 <li>พื้นที่รวม/แยก 2 ห้อง 100-120 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 380 cfm ราคา 55,000 บาท</li>
               </ul>
-              <p>สามารถแนบภาพตัวอย่างการติดตั้งแต่ละขนาด เพื่อช่วยให้ลูกค้าเห็นตำแหน่งท่อและจุดจ่ายลมที่เหมาะสม</p>
             </div>
           </details>
           <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
