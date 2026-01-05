@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta",
+const notoSansThai = Noto_Sans_Thai({
+  subsets: ["thai", "latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-noto-sans-thai",
 });
 
 export const metadata: Metadata = {
@@ -20,15 +21,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="th">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
       <body
-        className={`${plusJakartaSans.variable} bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark antialiased transition-colors duration-300`}
+        className={`${notoSansThai.variable} font-noto-sans-thai bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark antialiased transition-colors duration-300`}
+        style={{ fontFamily: 'var(--font-noto-sans-thai), sans-serif' }}
       >
         {children}
       </body>
