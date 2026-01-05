@@ -4,7 +4,47 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [contactOpen, setContactOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const galleryFolder = "ภาพการติดตั้งและรีวิวการใช้งานจริง";
+  const galleryFiles = [
+    "REVIEW 1.jpg",
+    "REVIEW2.png",
+    "ติดตั้ง 1 .png",
+    "ติดตั้ง 2 .png",
+    "ติดตั้ง 3.png",
+    "ติดตั้ง 4.jpg",
+    "ติดตั้ง 5.jpg",
+    "ติดตั้ง 6.jpg",
+    "ติดตั้ง 7.jpg",
+    "ติดตั้ง 8.png",
+    "ติดตั้ง 9.jpg",
+    "ติดตั้ง 10.png",
+  ];
+  const galleryImages = galleryFiles.map((file) => ({
+    src: encodeURI(`/gal/${galleryFolder}/${file}`),
+    caption: file.replace(/\.[^.]+$/, ""),
+  }));
+  const serviceFolder = "/service-20260105T101027Z-1-001/service";
+  const services = [
+    {
+      title: "การประเมินหน้างาน",
+      description:
+        "ตรวจสอบพื้นที่จริง สภาพแวดล้อม และรูปแบบการใช้งาน เพื่อคำนวณปริมาณลมและเลือกอุปกรณ์ได้ตรงจุด",
+      image: encodeURI(`${serviceFolder}/การประเมินหน้างาน.jpg`),
+    },
+    {
+      title: "ออกแบบและวางตำแหน่งการติดตั้ง",
+      description:
+        "วางแผนเส้นทางท่อและตำแหน่งเครื่องเติมอากาศให้เหมาะกับโครงสร้าง เพื่อให้เกิดแรงดันบวกและการหมุนเวียนอากาศที่ดีที่สุด",
+      image: encodeURI(`${serviceFolder}/การออกแบบและวางตำแหน่งการติดตั้ง.jpg`),
+    },
+    {
+      title: "ดูแลหลังการขายและให้คำปรึกษา",
+      description:
+        "ติดตามผลการใช้งาน ตรวจสอบอุปกรณ์ และให้คำแนะนำตลอดอายุการใช้งาน เพื่อให้ระบบทำงานได้เต็มประสิทธิภาพเสมอ",
+      image: encodeURI(`${serviceFolder}/การดูแลหลังการขาย.jpg`),
+    },
+  ];
 
   return (
     <main className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
@@ -12,58 +52,32 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
-              Services
+              บริการของเรา
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">Complete Air Care</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ดูแลครบทุกขั้นตอน</h2>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
-              We don&apos;t just sell products; we provide comprehensive solutions to maintain your air quality systems for years to come.
+              บริการครบ ตั้งแต่ประเมินหน้างาน ออกแบบการติดตั้ง ไปจนถึงดูแลหลังการขายอย่างต่อเนื่อง
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl group text-center md:text-left">
-              <div className="w-14 h-14 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0 group-hover:bg-primary transition-colors">
-                <span className="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">
-                  build_circle
-                </span>
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl"
+              >
+                <div className="relative h-40 w-full rounded-2xl overflow-hidden mb-6">
+                  <img
+                    alt={service.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    src={service.image}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
+                </div>
+                <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">{service.title}</h3>
+                <p className="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">{service.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">Installation</h3>
-              <p className="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">
-                Professional setup of your air purification system to ensure optimal airflow and maximum efficiency from day one.
-              </p>
-            </div>
-            <div className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl group text-center md:text-left">
-              <div className="w-14 h-14 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0 group-hover:bg-primary transition-colors">
-                <span className="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">
-                  calendar_month
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">Filter Replacement</h3>
-              <p className="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">
-                Scheduled filter deliveries and replacement services so you never have to worry about reduced air quality.
-              </p>
-            </div>
-            <div className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl group text-center md:text-left">
-              <div className="w-14 h-14 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0 group-hover:bg-primary transition-colors">
-                <span className="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">
-                  speed
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">Performance Audit</h3>
-              <p className="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">
-                Comprehensive testing of your indoor air quality to identify pollutants and optimize device settings.
-              </p>
-            </div>
-            <div className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl group text-center md:text-left">
-              <div className="w-14 h-14 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0 group-hover:bg-primary transition-colors">
-                <span className="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">
-                  support_agent
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">24/7 Support</h3>
-              <p className="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">
-                Round-the-clock technical assistance for any issues, ensuring uninterrupted clean air for your home.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -106,36 +120,36 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Pre / Medium / Carbon / ULPA / UVC</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre / Medium / Carbon / ULPA / UVC</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">15×15 ซม. (รูเจาะ 4")</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">15×15 ซม. (รูเจาะ 4&quot;)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">สูงสุด 30 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 30 ตร.ม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 5 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 5 ปี / อื่นๆ 1 ปี</p>
                     </div>
                   </div>
                 </div>
@@ -175,36 +189,36 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Pre / Medium / Carbon / ULPA / UVC</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre / Medium / Carbon / ULPA / UVC</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. (รูเจาะ 5")</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. (รูเจาะ 5&quot;)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">สูงสุด 50-60 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 50-60 ตร.ม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 5 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 5 ปี / อื่นๆ 1 ปี</p>
                     </div>
                   </div>
                 </div>
@@ -244,36 +258,36 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Pre-filter / HEPA filter</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / HEPA filter</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. (รูเจาะ 5")</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. (รูเจาะ 5&quot;)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">สูงสุด 60-70 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 60-70 ตร.ม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 2 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 2 ปี / อื่นๆ 1 ปี</p>
                     </div>
                   </div>
                 </div>
@@ -313,36 +327,36 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Pre-filter / HEPA filter</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / HEPA filter</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. x 2 หัว (รูเจาะ 5" x 2)</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. x 2 หัว (รูเจาะ 5&quot; x 2)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">สูงสุด 100-120 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 100-120 ตร.ม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-xs text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 2 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 2 ปี / อื่นๆ 1 ปี</p>
                     </div>
                   </div>
                 </div>
@@ -359,12 +373,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="text-center mt-12">
-            <button className="px-8 py-3 bg-secondary dark:bg-card-light text-white dark:text-secondary font-semibold rounded-full hover:bg-opacity-90 transition-colors inline-flex items-center gap-2">
-              <span>ดูผลิตภัณฑ์ทั้งหมด</span>
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-          </div>
         </div>
       </section>
 
@@ -372,358 +380,291 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
-              FAQ
+              FAQ เรื่องฝุ่น
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ตอบทุกคำถามเรื่องฝุ่น ครบจบในโพสต์เดียว</h2>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
-              Find answers to common questions about our air purification systems and services.
+              รวมคำถามที่ลูกค้าถามบ่อยเกี่ยวกับระบบเติมอากาศ Master House เพื่อสุขภาพทางเดินหายใจที่ดีขึ้นของทั้งครอบครัว
             </p>
           </div>
-          <div className="max-w-3xl mx-auto space-y-4">
-            <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">How often should I replace the filters?</h3>
-                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
-              </summary>
-              <p className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-                We recommend replacing HEPA filters every 6-12 months depending on usage and air quality. Our scheduled replacement service ensures you never miss a change.
-              </p>
-            </details>
-            <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">What area does each unit cover?</h3>
-                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
-              </summary>
-              <p className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-                Coverage varies by model: Home Series 300 covers up to 300 sq ft, Pro Air Tower covers up to 800 sq ft, and Smart Sense V2 adapts to spaces up to 500 sq ft.
-              </p>
-            </details>
-            <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">Is professional installation required?</h3>
-                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
-              </summary>
-              <p className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-                While our units are designed for easy setup, we offer professional installation to ensure optimal placement and performance. This service is included with Pro Air Tower purchases.
-              </p>
-            </details>
-            <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">What is the warranty coverage?</h3>
-                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
-              </summary>
-              <p className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-                All O2 Airflow products come with a 2-year manufacturer warranty covering parts and labor. Extended warranty options are available for up to 5 years of coverage.
-              </p>
-            </details>
-            <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">Do you offer financing options?</h3>
-                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
-              </summary>
-              <p className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-                Yes, we partner with leading financing providers to offer flexible payment plans. Options include 0% APR for 12 months or extended terms up to 36 months.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-background-light dark:bg-background-dark relative" id="gallery">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div className="max-w-2xl">
-              <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
-                Community Gallery
+        <div className="max-w-3xl mx-auto space-y-4">
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">1. เครื่องเติมอากาศ คืออะไร?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-text-light dark:text-text-dark mb-4">See The Difference</h2>
-              <p className="text-text-muted-light dark:text-text-muted-dark text-lg">
-                Real homes, real fresh air. Join our community of happy customers who have upgraded their living spaces.
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+              <p>
+                เครื่องเติมอากาศคือระบบระบายอากาศแรงดันบวกที่ดึงอากาศภายนอกเข้ามา ผ่านการกรอง 6 ขั้นตอน (Pre-filter, ดักขน/ฝุ่นหยาบ,
+                Carbon, HEPA, ULPA, UVC) ก่อนอัดลมสะอาดเข้าสู่ห้อง ทำให้เกิดแรงดันบวกดันฝุ่น PM2.5 ออกจากรอยรั่วทุกจุด จึงรักษาค่าฝุ่นในห้องให้ใกล้ 0 ppm ตลอดเวลา
+              </p>
+              <p>
+                สามารถแนบอินโฟกราฟิกหรือวิดีโอที่แสดงขั้นตอนการกรองและการดันลมออก เพื่อช่วยให้ลูกค้าเข้าใจกลไกแรงดันบวกชัดเจนขึ้น
               </p>
             </div>
-            <div className="flex gap-2">
-              <button className="w-12 h-12 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-secondary transition-all text-text-muted-light dark:text-text-muted-dark">
-                <span className="material-symbols-outlined">arrow_back</span>
-              </button>
-              <button className="w-12 h-12 rounded-full bg-primary text-secondary flex items-center justify-center hover:bg-primaryDark hover:text-white transition-all shadow-lg shadow-primary/30">
-                <span className="material-symbols-outlined">arrow_forward</span>
-              </button>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">2. เครื่องฟอกอากาศ vs. เครื่องเติมอากาศ ต่างกันอย่างไร?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-4">
+              <p>ตารางนี้ช่วยให้เห็นความต่างชัดเจน:</p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left border border-gray-200 dark:border-gray-800">
+                  <thead className="bg-gray-50 dark:bg-gray-800/50 text-text-light dark:text-text-dark">
+                    <tr>
+                      <th className="p-3">คุณสมบัติ</th>
+                      <th className="p-3">เครื่องเติมอากาศ (Master House)</th>
+                      <th className="p-3">เครื่องฟอกอากาศทั่วไป</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-text-muted-light dark:text-text-muted-dark">
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">การทำงาน</td>
+                      <td className="p-3">เติมอากาศดีใหม่พร้อมไล่อากาศเสียออก</td>
+                      <td className="p-3">หมุนเวียนและฟอกอากาศเดิมภายในห้อง</td>
+                    </tr>
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">การป้องกันฝุ่น</td>
+                      <td className="p-3">สร้างแรงดันบวก กัน PM2.5 ไม่ให้เข้าบ้าน</td>
+                      <td className="p-3">ลด PM2.5 เฉพาะอากาศภายใน ฝุ่นใหม่ยังเข้าได้ตลอด</td>
+                    </tr>
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">คุณภาพอากาศ</td>
+                      <td className="p-3">เติมออกซิเจนใหม่ CO₂ ไม่สะสม</td>
+                      <td className="p-3">CO₂ สะสม อาจทำให้รู้สึกง่วงหรืออับ</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
-            <div className="md:col-span-2 md:row-span-2 group relative rounded-3xl overflow-hidden cursor-pointer">
-              <img
-                alt="Living room setup"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARUy8CMmwrgJdUu70TN2gJGKVy6PvkugX_rKfvljzneSdejvgj9VAxy65vFguDF23ADDz5K9hCf25a52nDBkS63wD5ZR4b5UEHAkBVb-sgCUnDlGVqyHK1Fzhr6siSBsGJsgq2blICa9UgCQKdmAfhgLhnlLqHet2yuqlX8rKXnRgLcr9nDWfMtZMw_Oa3vDvfaDSEDXyaUdMtJCEblbgYaWZ0Id7edNfhR2yhebWKlaTJ2A65hFeTHJIp8QnyfD2ER_61RFEHcGQ"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 md:translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                <div className="flex items-center gap-2 mb-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity delay-100 duration-300">
-                  <span className="material-symbols-outlined text-sm">verified</span>
-                  <span className="text-xs font-bold uppercase tracking-wider">Verified Purchase</span>
-                </div>
-                <p className="text-white text-xl md:text-2xl font-bold leading-tight">
-                  &ldquo;Finally, a purifier that looks as good as it works.&rdquo;
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">3. เครื่องเติมอากาศ Master House มีกี่รุ่น?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-4">
+              <p>เราโฟกัส 4 รุ่นหลักที่ครอบคลุมทุกขนาดพื้นที่:</p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left border border-gray-200 dark:border-gray-800">
+                  <thead className="bg-gray-50 dark:bg-gray-800/50 text-text-light dark:text-text-dark">
+                    <tr>
+                      <th className="p-3">รุ่น</th>
+                      <th className="p-3">พื้นที่แนะนำ</th>
+                      <th className="p-3">การกรอง</th>
+                      <th className="p-3">ประกันมอเตอร์</th>
+                      <th className="p-3">ราคาเริ่มต้น*</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-text-muted-light dark:text-text-muted-dark">
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">PREMIUM 70 cfm</td>
+                      <td className="p-3">ไม่เกิน 30 ตร.ม.</td>
+                      <td className="p-3">6 ขั้นตอนครบ</td>
+                      <td className="p-3">5 ปี</td>
+                      <td className="p-3">฿27,500</td>
+                    </tr>
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">PREMIUM 180 cfm</td>
+                      <td className="p-3">50-60 ตร.ม.</td>
+                      <td className="p-3">6 ขั้นตอนครบ</td>
+                      <td className="p-3">5 ปี</td>
+                      <td className="p-3">฿52,500</td>
+                    </tr>
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">STANDARD 200 cfm</td>
+                      <td className="p-3">60-70 ตร.ม.</td>
+                      <td className="p-3">2 ขั้นตอน</td>
+                      <td className="p-3">2 ปี</td>
+                      <td className="p-3">฿35,000</td>
+                    </tr>
+                    <tr className="border-t border-gray-200 dark:border-gray-700">
+                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">STANDARD 380 cfm</td>
+                      <td className="p-3">100-120 ตร.ม.</td>
+                      <td className="p-3">2 ขั้นตอน</td>
+                      <td className="p-3">2 ปี</td>
+                      <td className="p-3">฿55,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-text-muted-light dark:text-text-muted-dark">*ราคารวมติดตั้ง รุ่น PREMIUM เหมาะพื้นที่ที่มีปัญหากลิ่นเผาหรือมลพิษหนักเพราะมี Carbon + ULPA + UVC ครบ</p>
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">4. จะเลือกรุ่นอย่างไร?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+              <p>เลือกตามขนาดห้องและปัญหากลิ่น (ติดตั้งแบบแยกห้องเหมือนแอร์):</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>≤30 ตร.ม.: PREMIUM 70 cfm ราคา 27,500 บาท</li>
+                <li>50-60 ตร.ม.: PREMIUM 180 cfm ราคา 52,500 บาท</li>
+                <li>60-70 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 200 cfm ราคา 35,000 บาท</li>
+                <li>พื้นที่รวม/แยก 2 ห้อง 100-120 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 380 cfm ราคา 55,000 บาท</li>
+              </ul>
+              <p>สามารถแนบภาพตัวอย่างการติดตั้งแต่ละขนาด เพื่อช่วยให้ลูกค้าเห็นตำแหน่งท่อและจุดจ่ายลมที่เหมาะสม</p>
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">5. ตัวเครื่องกินไฟเยอะไหม?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+              <p>ไม่ต้องกังวล! มอเตอร์พัดลมถูกออกแบบให้ประหยัดไฟ:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>เปิดทุกวัน 8-10 ชม.: รุ่นเล็กตกอยู่ที่ ~100-120 บาท/เดือน</li>
+                <li>รุ่นใหญ่ประมาณ ~150-170 บาท/เดือน</li>
+              </ul>
+              <p>จึงคุ้มค่าสำหรับการเปิดต่อเนื่องเพื่อรักษาแรงดันบวกทั้งวัน</p>
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">6. เครื่องเดียวจ่ายลมได้หลายห้องไหม?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+              ทำได้ โดยใช้เครื่องขนาดใหญ่แล้วออกแบบท่อแยกไป 2-3 ห้องพร้อมกัน ขึ้นอยู่กับพื้นที่รวมและการใช้งาน ทีมวิศวกรจะช่วยคำนวณให้สมดุลทั้งแรงดันและปริมาณลม
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">7. ต้องบำรุงรักษาอย่างไรและมีค่าใช้จ่ายเท่าไหร่?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+              <p>โดยทั่วไปเปลี่ยนไส้กรองครบชุดทุก 2-3 ปี เพื่อลดฝุ่นสะสมและยืดอายุเครื่อง (ตัวอย่าง PREMIUM 70 cfm ตลอด 3 ปีเฉลี่ย ~7,000 บาท)</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Pre-filter ล้างทุก 3 เดือน (ไม่มีค่าใช้จ่าย)</li>
+                <li>ชุด Non-ULPA ทุก 12 เดือน (ประมาณ 4,000 บาท)</li>
+                <li>ULPA ทุก 24 เดือน (ประมาณ 3,000 บาท)</li>
+              </ul>
+              <p>ทีมบริการจะนัดหมายและดูแลตามรอบเพื่อให้ระบบทำงานเต็มประสิทธิภาพ</p>
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">8. เสียงเครื่องดังไหม?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-2">
+              <p>เสียงเงียบกว่าพัดลมดูดอากาศในห้องน้ำ และยังมี “กล่องไซเรนเซอร์” ลดเสียงสะท้อนเพิ่มเติม</p>
+              <p>สามารถสลับโหมด Low ตอนนอนเพื่อความเงียบสูงสุด เครื่องทำงานเนียนไม่รบกวนการพักผ่อน</p>
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">9. เปิด/ปิด หรือปรับสปีดอย่างไร?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+              ใช้รีโมทไร้สายควบคุมได้จากในห้องนอน ปรับสปีดพัดลมและสั่งเปิด/ปิดได้ง่ายไม่ต้องเดินไปที่ตัวเครื่อง
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">10. เครื่องเติมอากาศในตลาดต่างกันแค่ไหน?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-2">
+              <p>แตกต่างทั้งเกรดวัสดุ ชนิดไส้กรอง และประสบการณ์ติดตั้ง ระบบของเราให้ความสำคัญกับคุณภาพอากาศภายนอกที่ต้องเข้าบ้าน จึงจัดเต็ม 6 ขั้นกรองตั้งแต่ตะแกรงลวด, Carbon, HEPA, ULPA จนถึง UVC ฆ่าเชื้อ</p>
+              <p>ลูกค้าจึงมั่นใจได้ว่าลมที่เข้าสู่ห้องสะอาด ปลอดกลิ่น และปลอดเชื้อ</p>
+            </div>
+          </details>
+          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+            <summary className="flex justify-between items-center cursor-pointer list-none">
+              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">11. ทำไมต้องเลือกบริษัทมาสเตอร์เฮ้าส์?</h3>
+              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                expand_more
+              </span>
+            </summary>
+            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+              <p>
+                เราเชี่ยวชาญระบบเติมอากาศและแรงดันบวก/ลบ ผ่านงานติดตั้งกว่า 1,200 ชุด ทั้งบ้านพัก โรงพยาบาล คลินิกทันตกรรม โรงเรียน และหน่วยงานราชการ
+                มีหน้าร้านให้ทดลองระบบจริง เปรียบเทียบไส้กรอง และห้องทดสอบแรงดันบวกก่อนตัดสินใจ
+              </p>
+              <div className="text-sm space-y-1">
+                <p>อย่าเพิ่งตัดสินใจ หากยังไม่ได้คุยกับเรา</p>
+                <p>085-495-6395 (คุณบอม) / 065-919-4403 (คุณเอ้)</p>
+                <p>บริษัท มาสเตอร์ เฮ้าส จำกัด 141/1 หมู่ 9 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ 50300</p>
+                <p>
+                  แผนที่: <a className="text-primary hover:underline" href="https://maps.app.goo.gl/s57r6KaGEPCVq7acA" rel="noreferrer" target="_blank">Google Maps</a>
                 </p>
-                <p className="text-gray-300 text-sm mt-2 font-medium">@sarah.designs_ • Seattle, WA</p>
               </div>
             </div>
-            <div className="md:col-span-1 md:row-span-2 group relative rounded-3xl overflow-hidden cursor-pointer">
-              <img
-                alt="Tower unit"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCikvqYMQAXHbSqLgumA0shMJkHX1GrKqhY82qLEzDyfBadShar87B44tk1VsbdP_SY5AMmiJ-JoQdWeucijfdGF72aXQolXx0QCzhgytXxV13SVE-isIefLsgFMcOfBLDMN1l0xW4IlXa33DkY5krniCT4Au_bDbnAHYPkLEFxk9ndLL23h_AieJhvWdDRR4Xdb_8tq9rLsndLpcdBXDMq0Bty81gHkbtGQV8cYaPRjt7qTP7hriViLpLXGd4pl0kAmVUR17bZYuA"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 p-6 transform translate-y-4 md:translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                <p className="text-white font-bold text-lg">Perfect for corners</p>
-                <p className="text-gray-300 text-xs mt-1">Minimal footprint, max airflow.</p>
-              </div>
-              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="material-symbols-outlined text-white">favorite</span>
-              </div>
-            </div>
-            <div className="md:col-span-1 md:row-span-1 group relative rounded-3xl overflow-hidden cursor-pointer">
-              <img
-                alt="Bedroom unit"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASmH-QFSrvsAq7_t6-9tPp46M1Mqdkub0QLKWMdyFuy6kpZEgq_YNh_duumQJIm7sBl5zojjwaALlXGozGG3c_gPuIXZXI-MLmo5mY_yrutbum_WoOUq5-e3vOFh8sz8XMLa4HPHG2gaRPLvyg8x6VttjPbTD7XZz45_6i6U_1ZeW6itlzlyU97z5K7RKByA777hLTFyuYT4XkQC4wzS-yL-pLzs6rgPJ715SohSK-KcWb9SxggaX20BWFgkuPA_8LAJQ4Jggr6Dc"
-              />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-              <div className="absolute bottom-6 left-6">
-                <span className="px-3 py-1 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-lg text-xs font-bold text-text-light dark:text-text-dark shadow-lg">
-                  Bedroom
-                </span>
-              </div>
-            </div>
-            <div className="md:col-span-1 md:row-span-1 group relative rounded-3xl overflow-hidden cursor-pointer">
-              <img
-                alt="Office unit"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe4JClY3xyo-7AQu4DqFpY0cUBg-3KFLB69CyqAm4bFtyjkgXQWe62hucCxA-sWR4KKYyiL96Q0T7-WdmtEq1U6WXkxA0Duo0X3hkPvLFmcKoZTK079tfZB5rVQ_VdbFh3m3zrI2d3bjly1hYcWuq_3M_8jElHs1482h4eH_6HBueP3kFbjz4EFNuW46VsWyQnLKk5sYMWVbKZB4hXRjI7qGxXONItCJxa0BZzxYzOCd0FpPtXtmH01IV5pamya170E5NKfHZoNx0"
-              />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-              <div className="absolute bottom-6 left-6">
-                <span className="px-3 py-1 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-lg text-xs font-bold text-text-light dark:text-text-dark shadow-lg">
-                  Home Office
-                </span>
-              </div>
-            </div>
-            <div className="md:col-span-1 md:row-span-1 bg-primary rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-10 transform scale-150 group-hover:scale-125 transition-transform duration-700">
-                <span className="material-symbols-outlined text-9xl text-white">linked_camera</span>
-              </div>
-              <div className="relative z-10">
-                <span className="material-symbols-outlined text-3xl text-secondary mb-4">add_a_photo</span>
-                <h3 className="text-2xl font-bold text-secondary mb-2">Share Your Space</h3>
-                <p className="text-secondary/80 text-sm font-medium">Tag #O2Airflow for a chance to be featured.</p>
-              </div>
-              <div className="relative z-10 mt-4">
-                <button className="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center hover:bg-white hover:text-secondary transition-colors">
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
-              </div>
-            </div>
+          </details>
+        </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background-light dark:bg-background-dark" id="gallery">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-12" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {galleryImages.map(({ src, caption }, index) => (
+              <button
+                key={`${caption}-${index}`}
+                className="rounded-2xl overflow-hidden bg-white dark:bg-card-dark shadow-md aspect-square"
+                type="button"
+                onClick={() => setActiveImage(src)}
+              >
+                <img alt={caption} className="h-full w-full object-cover" src={src} />
+              </button>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-all hover:bg-primaryDark"
+              href="tel:+66854956395"
+            >
+              <span className="material-symbols-outlined text-base">call</span>
+              นัดประเมินติดตั้งทันที
+            </a>
           </div>
         </div>
       </section>
 
-      <footer className="bg-secondary text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <span className="material-symbols-outlined text-primary text-3xl">air</span>
-                <div className="text-2xl font-bold text-white tracking-tight">O2 Airflow</div>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Providing sustainable and efficient air purification solutions for a healthier tomorrow.
-              </p>
-              <div className="flex space-x-4">
-                <a className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors text-xs font-semibold" href="#">
-                  Tw
-                </a>
-                <a className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors text-xs font-semibold" href="#">
-                  In
-                </a>
-                <a className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors text-xs font-semibold" href="#">
-                  Fb
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-6">Company</h4>
-              <ul className="space-y-4 text-gray-400 text-sm">
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    News
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-6">Services</h4>
-              <ul className="space-y-4 text-gray-400 text-sm">
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    Installation
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    Maintenance
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    Air Quality Testing
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-primary transition-colors" href="#">
-                    Consultation
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-6">Newsletter</h4>
-              <p className="text-gray-400 text-sm mb-4">Subscribe to get the latest updates on air quality tech.</p>
-              <div className="flex">
-                <input
-                  className="bg-white/10 border-none text-white placeholder-gray-500 rounded-l-lg py-2 px-4 focus:ring-1 focus:ring-primary w-full text-sm"
-                  placeholder="Your Email"
-                  type="email"
-                />
-                <button className="bg-primary text-secondary px-4 py-2 rounded-r-lg font-bold hover:bg-primaryDark transition-colors">
-                  Go
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-            <p>© 2023 Masterhouse O2 Airflow. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a className="hover:text-white" href="#">
-                Privacy Policy
-              </a>
-              <a className="hover:text-white" href="#">
-                Terms of Service
-              </a>
-            </div>
+      {activeImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={() => setActiveImage(null)}>
+          <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              aria-label="Close image preview"
+              className="absolute -top-10 right-0 text-white text-2xl"
+              onClick={() => setActiveImage(null)}
+              type="button"
+            >
+              ×
+            </button>
+            <img alt="gallery full" className="w-full h-full object-contain rounded-3xl" src={activeImage} />
           </div>
         </div>
-      </footer>
-      <button
-        type="button"
-        onClick={() => setContactOpen(true)}
-        className="fixed bottom-8 right-6 z-40 flex items-center gap-3 rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-white shadow-[0_15px_45px_rgba(15,23,42,0.55)] transition-all hover:bg-primary hover:text-secondary"
-      >
-        <span className="material-symbols-outlined text-base">call</span>
-        Contact Us
-      </button>
-      {contactOpen && (
-        <>
-          <div
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-            onClick={() => setContactOpen(false)}
-          />
-          <div className="fixed bottom-24 right-6 z-50 w-[320px] rounded-3xl bg-white p-6 text-left shadow-2xl dark:bg-card-dark">
-            <div className="mb-4 flex items-start justify-between">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.4em] text-primaryDark">
-                  Contact
-                </p>
-                <h3 className="text-xl font-semibold text-text-light dark:text-text-dark">
-                  Talk With Our Team
-                </h3>
-              </div>
-              <button
-                type="button"
-                className="rounded-full bg-background-light p-1 text-text-muted-light transition hover:text-primary dark:bg-background-dark"
-                onClick={() => setContactOpen(false)}
-                aria-label="Close contact panel"
-              >
-                <span className="material-symbols-outlined text-lg">close</span>
-              </button>
-            </div>
-            <div className="space-y-4 text-sm">
-              <div className="flex items-start gap-3 rounded-2xl bg-primary/10 p-3">
-                <span className="material-symbols-outlined text-base text-primary">call</span>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-text-muted-light">Hotline</p>
-                  <a href="tel:+1234567890" className="font-semibold text-text-light">
-                    +1 (234) 567-890
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 rounded-2xl bg-secondary/5 p-3">
-                <span className="material-symbols-outlined text-base text-secondary">mail</span>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-text-muted-light">Email</p>
-                  <a href="mailto:hello@o2airflow.com" className="font-semibold text-text-light">
-                    hello@o2airflow.com
-                  </a>
-                </div>
-              </div>
-              <form className="space-y-3">
-                <div>
-                  <label className="text-xs font-semibold uppercase tracking-wide text-text-muted-light">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Sarah Johnson"
-                    className="mt-1 w-full rounded-2xl border border-gray-200 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/40"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-semibold uppercase tracking-wide text-text-muted-light">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="you@email.com"
-                    className="mt-1 w-full rounded-2xl border border-gray-200 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/40"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="w-full rounded-2xl bg-primary py-2 text-sm font-bold text-secondary transition hover:bg-primaryDark"
-                >
-                  Request Callback
-                </button>
-              </form>
-            </div>
-          </div>
-        </>
       )}
+
     </main>
   );
 }
