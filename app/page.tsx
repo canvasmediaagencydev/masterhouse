@@ -100,9 +100,9 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="PRO 70 CFM"
+                  alt="MH-70 cfm Premium"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
-                  src="/products/70.png"
+                  src="/products/70 (1).png"
                 />
                 <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-secondary text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   กรอง 6 ขั้นตอน
@@ -110,7 +110,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">PRO 70 CFM</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-70 cfm Premium</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">verified</span>
                     <span>ประสิทธิภาพสูง</span>
@@ -120,36 +120,57 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / Medium-filter / Carbon-filter / ULPA-filter / UVC</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง 6 ขั้นตอน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Net / Pre-filter G5 / Medium M5 / Carbon / ULPA U15-U16 / UVC 8W</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">air</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ปริมาณลม / ท่ออากาศ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">70 CFM / 119 CMH / ท่อ 76 มม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">15×15 ซม. (รูเจาะ 4&quot;)</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาดตู้กรอง / หน้ากาก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">30×53×37 ซม. / สี่เหลี่ยม 15×15 ซม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 30 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่แนะนำ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">20-30 ตร.ม.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">build</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">วัสดุ / การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">เหล็ก 0.9 มม. สีฝุ่น / ผนังหรือขาตั้ง</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">bolt</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">กำลังไฟ / เสียง / น้ำหนัก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">66W (220V/0.4A) / 53 dB(A) / 21.5 Kg</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">settings_remote</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รีโมทไร้สาย</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ปรับ 3 ระดับ (RF315) 11.5×5 ซม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 5 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกันมอเตอร์ / ทนแดด-ฝน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">5 ปี / ทนแดด-ฝน 99%</p>
                     </div>
                   </div>
                 </div>
@@ -169,9 +190,9 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="PRO 180 CFM"
+                  alt="MH-180 cfm Premium"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
-                  src="/products/180.png"
+                  src="/products/180 (1).png"
                 />
                 <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-secondary text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   กรอง 6 ขั้นตอน
@@ -179,7 +200,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">PRO 180 CFM</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-180 cfm Premium</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">verified</span>
                     <span>ประสิทธิภาพสูง</span>
@@ -189,36 +210,57 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / Medium-filter / Carbon-filter / ULPA-filter / UVC</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง 6 ขั้นตอน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Net / Pre-filter G5 / Medium M5 / Carbon / ULPA U15-U16 / UVC 10W</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">air</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ปริมาณลม / ท่ออากาศ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">180 CFM / 306 CMH / ท่อ 110 มม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. (รูเจาะ 5&quot;)</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาดตู้กรอง / หน้ากาก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">36×79×69 ซม. / กลม Ø20 ซม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 50-60 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่แนะนำ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">50-60 ตร.ม.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">build</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">วัสดุ / การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">เหล็ก 0.9 มม. สีฝุ่น / ผนังหรือขาตั้ง</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">bolt</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">กำลังไฟ / เสียง / น้ำหนัก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">176W (220V/0.8A) / 58 dB(A) / 36 Kg</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">settings_remote</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รีโมทไร้สาย</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ปรับ 3 ระดับ (RF315)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 5 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกันมอเตอร์ / ทนแดด-ฝน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">5 ปี / ทนแดด-ฝน 99%</p>
                     </div>
                   </div>
                 </div>
@@ -238,7 +280,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="STANDARD 200 CFM"
+                  alt="MH-200 cfm Eco"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/200.jpg"
                 />
@@ -248,7 +290,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">STANDARD 200 CFM</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-200 cfm Eco</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">star</span>
                     <span>มาตรฐาน</span>
@@ -258,36 +300,57 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / HEPA filter</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง 2 ขั้นตอน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter G5 (305×305×44 มม.) / HEPA H14 (305×305×150 มม.)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">air</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ปริมาณลม / ท่ออากาศ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">380 CFM / 646 CMH / ท่อ 110 มม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. (รูเจาะ 5&quot;)</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาดตู้กรอง / หน้ากาก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">34×89×40 ซม. / กลม Ø20 ซม.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 60-70 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่แนะนำ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">80-100 ตร.ม.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">build</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">วัสดุ / การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">เหล็ก 0.9 มม. สีฝุ่น / ผนังหรือขาตั้ง</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">bolt</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">กำลังไฟ / เสียง / น้ำหนัก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">176W (220V/0.8A) / 55 dB(A) / 21 Kg</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">settings_remote</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รีโมทไร้สาย</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ปรับ 3 ระดับ (RF315)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 2 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกันมอเตอร์ / ทนแดด-ฝน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">2 ปี / ทนแดด-ฝน 99%</p>
                     </div>
                   </div>
                 </div>
@@ -307,7 +370,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="STANDARD 380 CFM"
+                  alt="MH-380 cfm Eco"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/380 (แก้ไข).jpg"
                 />
@@ -317,7 +380,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">STANDARD 380 CFM</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-380 cfm Eco</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">apartment</span>
                     <span>พื้นที่ขนาดใหญ่</span>
@@ -327,36 +390,57 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">filter_alt</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter / HEPA filter</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ระบบกรอง 2 ขั้นตอน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Pre-filter G5 (305×305×44 มม.) / HEPA H14 (305×305×150 มม.)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">air</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">การติดตั้ง</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ภายนอกอาคาร ไม่เสียพื้นที่</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ปริมาณลม / ท่ออากาศ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">380 CFM / 646 CMH / ท่อ 110 มม. × 2 หัวจ่าย</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">straighten</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาด</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Ø20 ซม. x 2 หัว (รูเจาะ 5&quot; x 2)</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ขนาดตู้กรอง / หน้ากาก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">34×105×40 ซม. / กลม Ø20 ซม. (2 ชุด)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">home</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">สูงสุด 100-120 ตร.ม.</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">พื้นที่แนะนำ</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">160-200 ตร.ม.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">build</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">วัสดุ / การติดตั้ง</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">เหล็ก 0.9 มม. สีฝุ่น / ผนังหรือขาตั้ง</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">bolt</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">กำลังไฟ / เสียง / น้ำหนัก</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">176W (220V/0.8A) / 60 dB(A) / 28 Kg</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg mt-0.5">settings_remote</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รีโมทไร้สาย</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">ปรับ 3 ระดับ (RF315)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
                     <div className="flex-1">
-                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกัน</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">มอเตอร์ 2 ปี / อื่นๆ 1 ปี</p>
+                      <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">รับประกันมอเตอร์ / ทนแดด-ฝน</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">2 ปี / ทนแดด-ฝน 99%</p>
                     </div>
                   </div>
                 </div>
