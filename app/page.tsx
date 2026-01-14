@@ -1043,7 +1043,13 @@ export default function Home() {
       <footer className="bg-slate-950 text-white py-16">
         <div className="container mx-auto px-6 grid gap-10 md:grid-cols-3">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Master House</h3>
+            <div className="mb-4">
+              <img
+                alt="Master House Company Limited logo"
+                className="h-20 w-auto object-contain"
+                src="/master-house-logo.jpg"
+              />
+            </div>
             <p className="text-white/70 mb-4">“อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง”
 ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน</p>
             <a className="inline-flex items-center gap-2 text-primary font-semibold" href={lineLink} rel="noreferrer" target="_blank">
