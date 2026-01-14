@@ -108,7 +108,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="MH-70 cfm Premium"
+                  alt="MH-70 cfm Pro"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/70 (1).png"
                 />
@@ -118,7 +118,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-70 cfm Premium</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-70 cfm Pro</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">verified</span>
                     <span>ประสิทธิภาพสูง</span>
@@ -198,7 +198,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="MH-180 cfm Premium"
+                  alt="MH-180 cfm Pro"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/180 (1).png"
                 />
@@ -208,7 +208,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-180 cfm Premium</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-180 cfm Pro</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">verified</span>
                     <span>ประสิทธิภาพสูง</span>
