@@ -729,6 +729,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 bg-white dark:bg-card-dark" id="video">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+              วิดีโอแนะนำ
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ดูการทำงานของเครื่องเติมอากาศ</h2>
+            <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+              เรียนรู้เพิ่มเติมเกี่ยวกับระบบเติมอากาศ Master House ผ่านวิดีโอสาธิตการทำงานจริง
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/FGSsiL3qxzM"
+                title="Master House - เครื่องเติมอากาศ"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {activeImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={() => setActiveImage(null)}>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
