@@ -6,9 +6,8 @@ import { useState } from "react";
 export default function Home() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const galleryFolder = "ภาพการติดตั้งและรีวิวการใช้งานจริง";
-  const galleryFiles = [
-    "REVIEW 1.jpg",
-    "REVIEW2.png",
+
+  const installationFiles = [
     "ติดตั้ง 1 .png",
     "ติดตั้ง 2 .png",
     "ติดตั้ง 3.png",
@@ -20,7 +19,16 @@ export default function Home() {
     "ติดตั้ง 9.jpg",
     "ติดตั้ง 10.png",
   ];
-  const galleryImages = galleryFiles.map((file) => ({
+  const installationImages = installationFiles.map((file) => ({
+    src: encodeURI(`/gal/${galleryFolder}/${file}`),
+    caption: file.replace(/\.[^.]+$/, ""),
+  }));
+
+  const reviewFiles = [
+    "REVIEW 1.jpg",
+    "REVIEW2.png",
+  ];
+  const reviewImages = reviewFiles.map((file) => ({
     src: encodeURI(`/gal/${galleryFolder}/${file}`),
     caption: file.replace(/\.[^.]+$/, ""),
   }));
@@ -702,18 +710,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-background-light dark:bg-background-dark" id="gallery">
+      <section className="py-24 bg-background-light dark:bg-background-dark" id="installation">
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mb-12" />
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+              ผลงานการติดตั้ง
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ภาพการติดตั้งจริง</h2>
+            <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+              ตัวอย่างการติดตั้งเครื่องเติมอากาศ Master House ในสถานที่จริง
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {galleryImages.map(({ src, caption }, index) => (
+            {installationImages.map(({ src, caption }, index) => (
               <button
-                key={`${caption}-${index}`}
+                key={`install-${caption}-${index}`}
                 className="rounded-2xl overflow-hidden bg-white dark:bg-card-dark shadow-md aspect-square"
                 type="button"
                 onClick={() => setActiveImage(src)}
               >
                 <img alt={caption} className="h-full w-full object-cover" src={src} />
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white dark:bg-card-dark" id="reviews">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+              รีวิวจากลูกค้า
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ลูกค้าพูดถึงเรา</h2>
+            <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+              ความประทับใจจากลูกค้าที่ใช้งานเครื่องเติมอากาศ Master House
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {reviewImages.map(({ src, caption }, index) => (
+              <button
+                key={`review-${caption}-${index}`}
+                className="rounded-2xl overflow-hidden bg-background-light dark:bg-background-dark shadow-md"
+                type="button"
+                onClick={() => setActiveImage(src)}
+              >
+                <img alt={caption} className="w-full h-auto object-cover" src={src} />
               </button>
             ))}
           </div>
@@ -729,7 +771,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white dark:bg-card-dark" id="video">
+      <section className="py-24 bg-background-light dark:bg-background-dark" id="video">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
