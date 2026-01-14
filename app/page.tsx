@@ -38,19 +38,19 @@ export default function Home() {
       title: "การประเมินหน้างาน",
       description:
         "ตรวจสอบพื้นที่จริง สภาพแวดล้อม และรูปแบบการใช้งาน เพื่อคำนวณปริมาณลมและเลือกอุปกรณ์ได้ตรงจุด",
-      image: encodeURI(`${serviceFolder}/การประเมินหน้างาน.jpg`),
+      image: `${serviceFolder}/1.png`,
     },
     {
       title: "ออกแบบและวางตำแหน่งการติดตั้ง",
       description:
         "วางแผนเส้นทางท่อและตำแหน่งเครื่องเติมอากาศให้เหมาะกับโครงสร้าง เพื่อให้เกิดแรงดันบวกและการหมุนเวียนอากาศที่ดีที่สุด",
-      image: encodeURI(`${serviceFolder}/การออกแบบและวางตำแหน่งการติดตั้ง.jpg`),
+      image: `${serviceFolder}/2.png`,
     },
     {
       title: "ดูแลหลังการขายและให้คำปรึกษา",
       description:
         "ติดตามผลการใช้งาน ตรวจสอบอุปกรณ์ และให้คำแนะนำตลอดอายุการใช้งาน เพื่อให้ระบบทำงานได้เต็มประสิทธิภาพเสมอ",
-      image: encodeURI(`${serviceFolder}/การดูแลหลังการขาย.jpg`),
+      image: `${serviceFolder}/3.png`,
     },
   ];
 
@@ -73,14 +73,13 @@ export default function Home() {
                 key={service.title}
                 className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl"
               >
-                <div className="relative h-40 w-full rounded-2xl overflow-hidden mb-6">
+                <div className="relative w-full rounded-2xl overflow-hidden mb-6">
                   <img
                     alt={service.title}
-                    className="h-full w-full object-cover"
+                    className="w-full h-auto object-contain"
                     loading="lazy"
                     src={service.image}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
                 </div>
                 <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">{service.title}</h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed">{service.description}</p>
