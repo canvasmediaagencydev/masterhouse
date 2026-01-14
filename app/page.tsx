@@ -56,10 +56,25 @@ export default function Home() {
 
   return (
     <main className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
-      <section className="py-24 bg-white dark:bg-card-dark" id="services">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 overflow-hidden" id="services">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-slate-900" />
+
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl translate-x-1/2" />
+        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl translate-y-1/2" />
+
+        {/* Wave decoration at bottom */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg className="w-full h-24 fill-background-light dark:fill-background-dark" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" />
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+            <span className="inline-block py-1 px-3 bg-white/80 dark:bg-slate-800/80 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase shadow-sm">
               บริการของเรา
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ดูแลครบทุกขั้นตอน</h2>
@@ -71,7 +86,7 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="p-8 rounded-3xl bg-background-light dark:bg-background-dark hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl"
+                className="p-8 rounded-3xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-white/50 dark:border-slate-700/50 hover:border-primary/30 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1"
               >
                 <div className="relative w-full rounded-2xl overflow-hidden mb-6">
                   <img
@@ -89,8 +104,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-background-light dark:bg-background-dark" id="products">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 overflow-hidden" id="products">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background-light via-slate-50 to-blue-50/50 dark:from-background-dark dark:via-slate-900 dark:to-blue-950/30" />
+
+        {/* Decorative dots pattern */}
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
               <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
@@ -111,7 +132,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/70 (1).png"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-secondary text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   กรอง 6 ขั้นตอน
                 </div>
               </div>
@@ -186,7 +207,7 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿27,500</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-secondary px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                   </button>
@@ -201,7 +222,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/180 (1).png"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-secondary text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   กรอง 6 ขั้นตอน
                 </div>
               </div>
@@ -276,7 +297,7 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿52,500</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-secondary px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                   </button>
@@ -366,7 +387,7 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿35,000</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-secondary px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                   </button>
@@ -456,7 +477,7 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿55,000</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-secondary px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                   </button>
