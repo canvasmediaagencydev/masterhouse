@@ -172,7 +172,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">เครื่องเติมอากาศ O2 Airflow</h2>
             </div>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-md mt-4 md:mt-0 text-right md:text-left">
-              ระบบเครื่องเติมอากาศบริสุทธิ์แบบแรงดันบวก (Positive Pressure Ventilation) เพื่อช่วยยกระดับคุณภาพการอยู่อาศัยและสร้างสภาพแวดล้อมที่ดีต่อสุขภาพในระยะยาว
+              Master House มีเครื่องเติมอากาศ เครื่องฟอกอากาศ เครื่องลดความชื้น เครื่องปรับอากาศ และระบบควบคุมอากาศหลากหลายรูปแบบ พร้อมห้องตัวอย่างให้ทดลองสัมผัสอากาศบริสุทธิ์จริงก่อนตัดสินใจติดตั้ง
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -184,9 +184,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/70 (1).png"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                  กรอง 6 ขั้นตอน
-                </div>
+              
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -274,9 +272,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/180 (1).png"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primaryDark text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                  กรอง 6 ขั้นตอน
-                </div>
+          
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -364,9 +360,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/200.jpg"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-secondary to-slate-700 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                  กรอง 2 ขั้นตอน
-                </div>
+                
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -454,9 +448,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/380 (แก้ไข).jpg"
                 />
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-secondary to-slate-700 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                  แยกจ่าย 2 ห้อง
-                </div>
+          
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -478,7 +470,7 @@ export default function Home() {
                     <span className="material-symbols-outlined text-primary text-lg mt-0.5">air</span>
                     <div className="flex-1">
                       <p className="text-sm font-semibold text-text-light dark:text-text-dark mb-0.5">ปริมาณลม / ท่ออากาศ</p>
-                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">380 CFM / 646 CMH / ท่อ 110 มม. × 2 หัวจ่าย</p>
+                      <p className="text-sm text-text-muted-light dark:text-text-muted-dark">380 CFM / 646 CMH / ท่อ 110 มม. × 2 </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -547,31 +539,89 @@ export default function Home() {
         <div className="absolute inset-x-0 top-1/3 h-40 bg-primary/10 blur-3xl" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="lg:w-5/12 space-y-4">
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primaryDark dark:text-primary text-xs font-semibold uppercase tracking-widest">
-                Sale Page
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-6">
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+                <span className="material-symbols-outlined text-base">blur_on</span>
+                Indoor Air Quality
               </span>
-              <h2 className="text-3xl font-bold text-text-light dark:text-text-dark">
+              <h2 className="text-3xl lg:text-4xl font-bold text-text-light dark:text-text-dark leading-tight">
                 หายใจโล่งขึ้นจริง นอนหลับสนิท และลดกลิ่นได้สูงสุดถึง 98%
               </h2>
-              <p className="text-text-muted-light dark:text-text-muted-dark">
+              <p className="text-lg text-text-muted-light dark:text-text-muted-dark">
                 หายใจโล่งขึ้นจริง แก้ปัญหาอากาศอับในบ้าน และฝุ่น PM2.5 อย่างได้ผล นอนหลับสนิท ลดกลิ่นไม่พึงประสงค์จากภายนอกได้สูงสุดถึง 98%
               </p>
               <p className="text-text-muted-light dark:text-text-muted-dark">
                 ด้วยระบบระบายอากาศและระบบเติมอากาศสำหรับบ้านพักอาศัยที่ออกแบบเฉพาะตามโครงสร้างและการใช้งานจริงของบ้านคุณ โดยทีมผู้เชี่ยวชาญด้านระบบอากาศภายในอาคาร (Indoor Air Quality) จาก Master House
               </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/60 border border-white/50 dark:border-white/10 shadow-lg shadow-primary/10 backdrop-blur">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="material-symbols-outlined text-primary text-2xl">air</span>
+                    <p className="text-sm font-semibold text-text-light dark:text-text-dark">เติมอากาศบริสุทธิ์</p>
+                  </div>
+                  <p className="text-sm text-text-muted-light dark:text-text-muted-dark">
+                    ส่งอากาศสะอาดเข้าสู่ทุกห้อง ลดฝุ่นสะสมและกลิ่นอับอย่างต่อเนื่องตลอด 24 ชั่วโมง
+                  </p>
+                </div>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-primary to-primaryDark text-white shadow-lg shadow-primary/30">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="material-symbols-outlined text-2xl">shield_moon</span>
+                    <p className="text-sm font-semibold uppercase tracking-widest">98% Odor Cut</p>
+                  </div>
+                  <p className="text-sm text-white/80">
+                    ป้องกันกลิ่นไม่พึงประสงค์จากภายนอก และช่วยให้การพักผ่อนในเวลากลางคืนสงบขึ้นทันที
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="lg:flex-1 space-y-6 text-text-light dark:text-text-dark text-base leading-relaxed">
-              <p>
-                Master House มีเครื่องเติมอากาศ เครื่องฟอกอากาศ เครื่องลดความชื้น เครื่องปรับอากาศ และระบบควบคุมอากาศหลากหลายรูปแบบ พร้อมห้องตัวอย่างให้ทดลองสัมผัสอากาศบริสุทธิ์จริงก่อนตัดสินใจติดตั้ง
-              </p>
-              <div className="p-6 rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/40 dark:border-slate-800/60 shadow-lg backdrop-blur">
-                <p className="font-semibold text-lg">
-                  “อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง”
-                </p>
-                <p className="text-sm text-text-muted-light dark:text-text-muted-dark mt-3">
-                  ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน
+
+            <div className="space-y-6 text-text-light dark:text-text-dark">
+              <div className="rounded-3xl border border-white/40 dark:border-white/5 bg-white/60 dark:bg-slate-950/60 backdrop-blur p-8 shadow-2xl shadow-primary/10">
+                <div className="flex flex-wrap gap-6 mb-8">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-text-muted-light dark:text-text-muted-dark">ลดกลิ่น</p>
+                    <p className="text-4xl font-bold text-primary">98%</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-text-muted-light dark:text-text-muted-dark">ลดฝุ่น PM2.5</p>
+                    <p className="text-4xl font-bold text-text-light dark:text-text-dark">-85%</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-text-muted-light dark:text-text-muted-dark">การหมุนเวียนอากาศ</p>
+                    <p className="text-4xl font-bold text-primary">+4X</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    {
+                      icon: "sync",
+                      title: "ระบบจ่าย-ระบายสมดุล",
+                      desc: "ออกแบบตำแหน่งท่อลมให้สมดุลกับโครงสร้างบ้าน ทำให้อากาศสดชื่นแบบไม่ต้องเปิดหน้าต่างตลอดเวลา",
+                    },
+                    {
+                      icon: "light_mode",
+                      title: "เซ็ตค่าได้ตามไลฟ์สไตล์",
+                      desc: "ปรับปริมาณลมให้เหมาะกับช่วงเวลาพักผ่อน เวิร์คฟรอมโฮม หรือวันที่อากาศแย่เป็นพิเศษ",
+                    },
+                  ].map((item) => (
+                    <div className="flex gap-4" key={item.title}>
+                      <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
+                      <div>
+                        <p className="font-semibold text-lg">{item.title}</p>
+                        <p className="text-sm text-text-muted-light dark:text-text-muted-dark">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-4 rounded-2xl border border-dashed border-primary/40 px-6 py-5 bg-primary/5 dark:bg-primary/10">
+                <div className="flex items-center gap-3 text-primary font-semibold">
+                  <span className="material-symbols-outlined">support_agent</span>
+                  ทีมผู้เชี่ยวชาญ Master House
+                </div>
+                <p className="text-sm text-text-muted-light dark:text-text-muted-dark text-center sm:text-left">
+                  สำรวจหน้างานและออกแบบระบบที่ตอบโจทย์ปัญหาอากาศของบ้านคุณจริง ๆ ก่อนเริ่มติดตั้ง
                 </p>
               </div>
             </div>
@@ -586,8 +636,8 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
-              FAQ เรื่องฝุ่น
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
+             คำถามที่พบบ่อย
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ตอบทุกคำถามเรื่องฝุ่น ครบจบในโพสต์เดียว</h2>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
@@ -835,7 +885,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
-            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
               รีวิวจากลูกค้า
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ลูกค้าพูดถึงเรา</h2>
@@ -928,7 +978,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
-            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
               ผลงานการติดตั้ง
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ภาพการติดตั้งจริง</h2>
@@ -968,7 +1018,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
-            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
               วิดีโอแนะนำ
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ดูการทำงานของเครื่องเติมอากาศ</h2>
@@ -994,7 +1044,8 @@ export default function Home() {
         <div className="container mx-auto px-6 grid gap-10 md:grid-cols-3">
           <div>
             <h3 className="text-2xl font-bold mb-4">Master House</h3>
-            <p className="text-white/70 mb-4">ผู้เชี่ยวชาญระบบระบายและเติมอากาศภายในบ้าน ออกแบบเฉพาะบ้านคุณเพื่อให้หายใจโล่งขึ้นจริง</p>
+            <p className="text-white/70 mb-4">“อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง”
+ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน</p>
             <a className="inline-flex items-center gap-2 text-primary font-semibold" href={lineLink} rel="noreferrer" target="_blank">
               <span className="material-symbols-outlined">chat</span>
               LINE {lineHandle}
