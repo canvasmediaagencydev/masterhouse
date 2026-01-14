@@ -126,7 +126,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="inline-block py-1 px-3 bg-white/80 dark:bg-slate-800/80 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase shadow-sm">
+            <span className="inline-block py-1 px-3 bg-white/80 dark:bg-slate-800/80 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase shadow-sm">
               บริการของเรา
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ดูแลครบทุกขั้นตอน</h2>
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-              <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+              <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
                 ผลิตภัณฑ์ของเรา
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">เครื่องเติมอากาศ O2 Airflow</h2>
