@@ -53,9 +53,48 @@ export default function Home() {
       image: `${serviceFolder}/3.png`,
     },
   ];
+  const partnerLogos = [
+    { src: "/o2-airflow.jpg", alt: "O2 Airflow logo", sizeClass: "max-h-32" },
+    { src: "/smile-o2.jpg", alt: "Smile O2 logo", sizeClass: "max-h-60" },
+  ];
 
   return (
     <main className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
+      <section className="relative py-24 overflow-hidden" id="partners">
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/70 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/15 to-transparent blur-3xl" />
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.25) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-gradient-to-r from-primary to-primaryDark text-white text-sm md:text-base tracking-[0.35em] uppercase font-semibold shadow-xl shadow-primary/30">
+              <span className="w-3 h-3 rounded-full bg-white animate-pulse" />
+              Powered by Master House
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark mt-5">
+              ระบบ O2 Airflow ที่ได้รับความไว้วางใจจากพันธมิตรคุณภาพ
+            </h3>
+            <p className="text-text-muted-light dark:text-text-muted-dark mt-4">
+              ติดตั้งและออกแบบโดยทีม Master House พร้อมดูแลแบรนด์ที่โฟกัสคุณภาพอากาศอย่างจริงจัง
+            </p>
+          </div>
+          <div className="mt-12 w-full flex flex-col sm:flex-row items-stretch justify-between gap-6">
+            {partnerLogos.map((logo) => (
+              <div
+                key={logo.src}
+                className="group relative flex-1 min-h-[10rem] rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  alt={logo.alt}
+                  className={`max-w-[75%] object-contain transition-transform duration-300 group-hover:scale-105 ${logo.sizeClass ?? "max-h-32"}`}
+                  src={logo.src}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24 overflow-hidden" id="services">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-slate-900" />
@@ -488,8 +527,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white dark:bg-card-dark" id="faq">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 overflow-hidden" id="partners">
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/70 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/15 to-transparent blur-3xl" />
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.25) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-primary/50 text-primaryDark dark:text-primary text-xs tracking-[0.2em] uppercase font-semibold bg-white/60 dark:bg-slate-900/60 backdrop-blur">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Powered by Master House
+            </span>
+            <h3 className="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark mt-5">
+              ระบบ O2 Airflow ที่ได้รับความไว้วางใจจากพันธมิตรคุณภาพ
+            </h3>
+            <p className="text-text-muted-light dark:text-text-muted-dark mt-4">
+              ติดตั้งและออกแบบโดยทีม Master House พร้อมดูแลแบรนด์ที่โฟกัสคุณภาพอากาศอย่างจริงจัง
+            </p>
+          </div>
+          <div className="mt-12 w-full flex flex-col sm:flex-row items-stretch justify-between gap-6">
+            {partnerLogos.map((logo) => (
+              <div
+                key={logo.src}
+                className="group relative flex-1 min-h-[10rem] rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur flex items-center justify-center overflow-hidden"
+              >
+                <img alt={logo.alt} className="max-h-32 max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105" src={logo.src} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-24 overflow-hidden" id="faq">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-blue-50/50 dark:from-slate-950 dark:via-slate-900 dark:to-blue-950/30" />
+        <div className="absolute -top-24 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-slate-950" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
               FAQ เรื่องฝุ่น
@@ -499,8 +573,8 @@ export default function Home() {
               รวมคำถามที่ลูกค้าถามบ่อยเกี่ยวกับระบบเติมอากาศ Master House เพื่อสุขภาพทางเดินหายใจที่ดีขึ้นของทั้งครอบครัว
             </p>
           </div>
-        <div className="max-w-3xl mx-auto space-y-4">
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <div className="max-w-3xl mx-auto space-y-4">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">1. เครื่องเติมอากาศ คืออะไร?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -514,7 +588,7 @@ export default function Home() {
               </p>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">2. เครื่องฟอกอากาศ vs. เครื่องเติมอากาศ ต่างกันอย่างไร?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -553,7 +627,7 @@ export default function Home() {
               </div>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">3. เครื่องเติมอากาศ Master House มีกี่รุ่น?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -608,7 +682,7 @@ export default function Home() {
               <p className="text-xs text-text-muted-light dark:text-text-muted-dark">*ราคารวมติดตั้ง รุ่น PREMIUM เหมาะพื้นที่ที่มีปัญหากลิ่นเผาหรือมลพิษหนักเพราะมี Carbon + ULPA + UVC ครบ</p>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">4. จะเลือกรุ่นอย่างไร?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -625,7 +699,7 @@ export default function Home() {
               </ul>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">5. ตัวเครื่องกินไฟเยอะไหม?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -641,7 +715,7 @@ export default function Home() {
               <p>จึงคุ้มค่าสำหรับการเปิดต่อเนื่องเพื่อรักษาแรงดันบวกทั้งวัน</p>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">6. เครื่องเดียวจ่ายลมได้หลายห้องไหม?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -652,7 +726,7 @@ export default function Home() {
               ทำได้ โดยใช้เครื่องขนาดใหญ่แล้วออกแบบท่อแยกไป 2-3 ห้องพร้อมกัน ขึ้นอยู่กับพื้นที่รวมและการใช้งาน ทีมวิศวกรจะช่วยคำนวณให้สมดุลทั้งแรงดันและปริมาณลม
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">7. ต้องบำรุงรักษาอย่างไรและมีค่าใช้จ่ายเท่าไหร่?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -669,7 +743,7 @@ export default function Home() {
               <p>ทีมบริการจะนัดหมายและดูแลตามรอบเพื่อให้ระบบทำงานเต็มประสิทธิภาพ</p>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">8. เสียงเครื่องดังไหม?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -681,7 +755,7 @@ export default function Home() {
               <p>สามารถสลับโหมด Low ตอนนอนเพื่อความเงียบสูงสุด เครื่องทำงานเนียนไม่รบกวนการพักผ่อน</p>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">9. เปิด/ปิด หรือปรับสปีดอย่างไร?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -692,7 +766,7 @@ export default function Home() {
               ใช้รีโมทไร้สายควบคุมได้จากในห้องนอน ปรับสปีดพัดลมและสั่งเปิด/ปิดได้ง่ายไม่ต้องเดินไปที่ตัวเครื่อง
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">10. เครื่องเติมอากาศในตลาดต่างกันแค่ไหน?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -704,7 +778,7 @@ export default function Home() {
               <p>ลูกค้าจึงมั่นใจได้ว่าลมที่เข้าสู่ห้องสะอาด ปลอดกลิ่น และปลอดเชื้อ</p>
             </div>
           </details>
-          <details className="group rounded-2xl bg-background-light dark:bg-background-dark p-6 hover:shadow-lg transition-shadow">
+          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
             <summary className="flex justify-between items-center cursor-pointer list-none">
               <h3 className="text-lg font-bold text-text-light dark:text-text-dark">11. ทำไมต้องเลือกบริษัทมาสเตอร์เฮ้าส์?</h3>
               <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
@@ -726,12 +800,19 @@ export default function Home() {
               </div>
             </div>
           </details>
-        </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-24 bg-background-light dark:bg-background-dark" id="reviews">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 overflow-hidden" id="reviews">
+        <div className="absolute inset-0 bg-gradient-to-br from-background-light via-blue-50 to-indigo-100/60 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/40" />
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(37,99,235,0.4) 1px, transparent 0)', backgroundSize: '40px 40px' }}
+        />
+        <div className="absolute -bottom-24 -right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
               รีวิวจากลูกค้า
@@ -745,10 +826,11 @@ export default function Home() {
             {reviewImages.map(({ src, caption }, index) => (
               <button
                 key={`review-${caption}-${index}`}
-                className="rounded-2xl overflow-hidden bg-white dark:bg-card-dark shadow-md"
+                className="group relative rounded-3xl overflow-hidden bg-white/85 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/60 shadow-xl backdrop-blur transition-all hover:-translate-y-1 hover:shadow-2xl"
                 type="button"
                 onClick={() => setActiveImage(src)}
               >
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/0 via-transparent to-white/20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
                 <img alt={caption} className="w-full h-auto object-cover" src={src} />
               </button>
             ))}
@@ -756,8 +838,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white dark:bg-card-dark" id="installation">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 overflow-hidden" id="installation">
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-blue-50/70 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[120%] h-64 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white dark:from-slate-950" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
               ผลงานการติดตั้ง
@@ -771,11 +857,12 @@ export default function Home() {
             {installationImages.map(({ src, caption }, index) => (
               <button
                 key={`install-${caption}-${index}`}
-                className="rounded-2xl overflow-hidden bg-background-light dark:bg-background-dark shadow-md aspect-square"
+                className="relative rounded-3xl overflow-hidden bg-white/80 dark:bg-slate-900/70 border border-white/40 dark:border-slate-800/60 shadow-xl backdrop-blur aspect-square transition-all hover:-translate-y-1 hover:shadow-2xl"
                 type="button"
                 onClick={() => setActiveImage(src)}
               >
                 <img alt={caption} className="h-full w-full object-cover" src={src} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity" />
               </button>
             ))}
           </div>
@@ -791,8 +878,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-background-light dark:bg-background-dark" id="video">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 overflow-hidden" id="video">
+        <div className="absolute inset-0 bg-gradient-to-br from-background-light via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+        <div className="absolute inset-x-0 top-10 h-40 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 blur-3xl" />
+        <div className="absolute -bottom-20 left-1/4 w-80 h-80 bg-sky-400/10 rounded-full blur-[110px]" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
               วิดีโอแนะนำ
@@ -803,7 +894,7 @@ export default function Home() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+            <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_35px_120px_rgba(37,99,235,0.25)] border border-white/40 dark:border-slate-800/60 bg-black/50 backdrop-blur" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/FGSsiL3qxzM"
