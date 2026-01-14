@@ -710,33 +710,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-background-light dark:bg-background-dark" id="installation">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
-              ผลงานการติดตั้ง
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ภาพการติดตั้งจริง</h2>
-            <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
-              ตัวอย่างการติดตั้งเครื่องเติมอากาศ Master House ในสถานที่จริง
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {installationImages.map(({ src, caption }, index) => (
-              <button
-                key={`install-${caption}-${index}`}
-                className="rounded-2xl overflow-hidden bg-white dark:bg-card-dark shadow-md aspect-square"
-                type="button"
-                onClick={() => setActiveImage(src)}
-              >
-                <img alt={caption} className="h-full w-full object-cover" src={src} />
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-white dark:bg-card-dark" id="reviews">
+      <section className="py-24 bg-background-light dark:bg-background-dark" id="reviews">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
@@ -751,11 +725,37 @@ export default function Home() {
             {reviewImages.map(({ src, caption }, index) => (
               <button
                 key={`review-${caption}-${index}`}
-                className="rounded-2xl overflow-hidden bg-background-light dark:bg-background-dark shadow-md"
+                className="rounded-2xl overflow-hidden bg-white dark:bg-card-dark shadow-md"
                 type="button"
                 onClick={() => setActiveImage(src)}
               >
                 <img alt={caption} className="w-full h-auto object-cover" src={src} />
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white dark:bg-card-dark" id="installation">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-xs font-bold tracking-wider mb-4 uppercase">
+              ผลงานการติดตั้ง
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ภาพการติดตั้งจริง</h2>
+            <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+              ตัวอย่างการติดตั้งเครื่องเติมอากาศ Master House ในสถานที่จริง
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {installationImages.map(({ src, caption }, index) => (
+              <button
+                key={`install-${caption}-${index}`}
+                className="rounded-2xl overflow-hidden bg-background-light dark:bg-background-dark shadow-md aspect-square"
+                type="button"
+                onClick={() => setActiveImage(src)}
+              >
+                <img alt={caption} className="h-full w-full object-cover" src={src} />
               </button>
             ))}
           </div>
