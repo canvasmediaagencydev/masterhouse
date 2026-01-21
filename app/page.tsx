@@ -9,8 +9,10 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [reviewSlideIndex, setReviewSlideIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const customerReviews = Array.from({ length: 9 }, (_, i) => `/csreview/${i + 1}.png`);
+  const slidesPerView = isMobile ? 1 : 3;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,15 @@ export default function Home() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -48,7 +59,7 @@ export default function Home() {
     { name: "คุณบอม", number: "085-495-6395" },
     { name: "คุณเอ้", number: "065-919-4403" },
   ];
-  const officeAddress = "บริษัท มาสเตอร์ เฮ้าส จำกัด 141/1 หมู่ 9 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ 50300";
+  const officeAddress = "บริษัท มาสเตอร์ เฮ้าส จำกัด";
   const services = [
     {
       title: "การประเมินหน้างาน",
@@ -761,9 +772,10 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-text-light dark:text-text-dark">O2Airflow</h3>
               </div>
               <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark">
-                <p className="leading-relaxed">
-                  เพิ่มความสะดวกด้วย<strong className="text-text-light dark:text-text-dark">เทคโนโลยี Mobile Application</strong> ผู้ใช้งานสามารถควบคุมการทำงานผ่านมือถือ ตั้งเวลาเปิด-ปิดอัตโนมัติ และปรับการใช้งานให้สอดคล้องกับไลฟ์สไตล์ได้ง่ายขึ้น
+                <p className="leading-relaxed mb-10">
+                  เพิ่มความสะดวกด้วย<strong className="text-text-light dark:text-text-dark">เทคโนโลยี Mobile Application</strong> ผู้ใช้งานสามารถควบคุมการทำงานผ่านมือถือ ตั้งเวลาเปิด-ปิดอัตโนมัติ และปรับการใช้งานให้สอดคล้องกับไลฟ์สไตล์ได้ง่ายขึ้น 
                 </p>
+                
                 <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
                   <p className="leading-relaxed">
                     เหมาะกับผู้ที่ชอบความทันสมัย และต้องการ<strong className="text-primary">ควบคุมระบบอากาศภายในบ้านได้แบบเรียลไทม์</strong>
@@ -1044,12 +1056,12 @@ export default function Home() {
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${reviewSlideIndex * (100 / 3)}%)` }}
+                style={{ transform: `translateX(-${reviewSlideIndex * (100 / slidesPerView)}%)` }}
               >
                 {customerReviews.map((src, index) => (
                   <button
                     key={`review-${index}`}
-                    className="w-1/3 flex-shrink-0 px-2"
+                    className={`${isMobile ? 'w-full' : 'w-1/3'} flex-shrink-0 px-2`}
                     type="button"
                     onClick={() => setActiveImage(src)}
                   >
@@ -1252,13 +1264,9 @@ export default function Home() {
             </div>
             <p className="text-white/70 mb-4">"อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง"
 ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน</p>
-            <a className="inline-flex items-center gap-2 text-primary font-semibold" href={lineLink} rel="noreferrer" target="_blank">
-              <span className="material-symbols-outlined">chat</span>
-              LINE {lineHandle}
-            </a>
           </div>
-          <div>
-            <h4 className="font-semibold mb-3 text-white">ติดต่อทีมงาน</h4>
+          <div className="md:ml-15 ml-0">
+            <h4 className="font-semibold mb-3  text-white">ติดต่อเรา</h4>
             <div className="space-y-2 text-white/80">
               {contactPhones.map((phone) => (
                 <a key={phone.number} className="flex items-center gap-3 hover:text-primary" href={`tel:${phone.number.replace(/-/g, "")}`}>
@@ -1267,16 +1275,36 @@ export default function Home() {
                   <span className="text-white/60">({phone.name})</span>
                 </a>
               ))}
-              <p className="flex items-start gap-3">
+              <p className="flex items-start gap-3 mb-5">
                 <span className="material-symbols-outlined text-primary">location_on</span>
                 <span>{officeAddress}</span>
               </p>
+              <a
+                href="https://line.me/R/ti/p/@masterhouse"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 group hover:text-primary transition-colors"
+              >
+                <span className="w-6 h-6 flex items-center justify-center bg-[#06C755] rounded-full">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                  </svg>
+                </span>
+                <span className="group-hover:underline text-green-500">@masterhouse</span>
+              </a>
+              <img alt="Master House LINE QR" className="max-w-[180px] rounded-2xl border border-white/20" src="/line-qr.png" />
             </div>
           </div>
-          <div>
-            <h4 className="font-semibold mb-3 text-green-400">Line OA</h4>
-            <img alt="Master House LINE QR" className="max-w-[180px] rounded-2xl border border-white/20" src="/line-qr.png" />
-            <p className="text-white/70 mt-3">สแกนเพื่อเพิ่มเพื่อน {lineHandle} หรือกดปุ่ม LINE เพื่อเริ่มแชตทันที</p>
+          <div className="rounded-2xl overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15105.118254958414!2d98.979504!3d18.8302334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3b033632d2f9%3A0x419523858e67c95f!2z4Lia4LiI4LiBLiDguKHguLLguKrguYDguJXguK3guKPguYwg4LmA4Liu4LmJ4Liy4Liq4LmMICjguYDguIrguLXguKLguIfguYPguKvguKHguYgp!5e0!3m2!1sen!2sth!4v1768976148795!5m2!1sen!2sth"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
         <div className="border-t border-white/10 mt-10 pt-6 text-center text-white/60 text-sm">
