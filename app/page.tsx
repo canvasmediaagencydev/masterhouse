@@ -90,11 +90,10 @@ export default function Home() {
     <main className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
@@ -152,9 +151,8 @@ export default function Home() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden transition-all duration-300 overflow-hidden ${
-            mobileMenuOpen ? "max-h-screen" : "max-h-0"
-          }`}
+          className={`lg:hidden transition-all duration-300 overflow-hidden ${mobileMenuOpen ? "max-h-screen" : "max-h-0"
+            }`}
         >
           <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-700 px-4 py-4 space-y-1">
             {/* Mobile Logos */}
@@ -257,14 +255,14 @@ export default function Home() {
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div className="flex flex-col items-center text-center mb-12">
             <div>
               <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
                 ผลิตภัณฑ์ของเรา
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">เครื่องเติมอากาศ O2 Airflow</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">เครื่องเติมอากาศ</h2>
             </div>
-            <p className="text-text-muted-light dark:text-text-muted-dark max-w-md mt-4 md:mt-0 text-right md:text-left">
+            <p className="text-text-muted-light dark:text-text-muted-dark max-w-md mt-4">
               Master House มีเครื่องเติมอากาศ เครื่องฟอกอากาศ เครื่องลดความชื้น เครื่องปรับอากาศ และระบบควบคุมอากาศหลากหลายรูปแบบ พร้อมห้องตัวอย่างให้ทดลองสัมผัสอากาศบริสุทธิ์จริงก่อนตัดสินใจติดตั้ง
             </p>
           </div>
@@ -277,7 +275,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/70 (1).png"
                 />
-              
+
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -365,7 +363,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/180 (1).png"
                 />
-          
+
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -453,7 +451,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/200.png"
                 />
-                
+
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -541,7 +539,7 @@ export default function Home() {
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/380.png"
                 />
-          
+
               </div>
               <div className="p-6 space-y-5">
                 <div>
@@ -726,7 +724,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-         
+
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">
               SmileO2 vs O2Airflow ต่างกันอย่างไร?
             </h2>
@@ -773,9 +771,9 @@ export default function Home() {
               </div>
               <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark">
                 <p className="leading-relaxed mb-10">
-                  เพิ่มความสะดวกด้วย<strong className="text-text-light dark:text-text-dark">เทคโนโลยี Mobile Application</strong> ผู้ใช้งานสามารถควบคุมการทำงานผ่านมือถือ ตั้งเวลาเปิด-ปิดอัตโนมัติ และปรับการใช้งานให้สอดคล้องกับไลฟ์สไตล์ได้ง่ายขึ้น 
+                  เพิ่มความสะดวกด้วย<strong className="text-text-light dark:text-text-dark">เทคโนโลยี Mobile Application</strong> ผู้ใช้งานสามารถควบคุมการทำงานผ่านมือถือ ตั้งเวลาเปิด-ปิดอัตโนมัติ และปรับการใช้งานให้สอดคล้องกับไลฟ์สไตล์ได้ง่ายขึ้น
                 </p>
-                
+
                 <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
                   <p className="leading-relaxed">
                     เหมาะกับผู้ที่ชอบความทันสมัย และต้องการ<strong className="text-primary">ควบคุมระบบอากาศภายในบ้านได้แบบเรียลไทม์</strong>
@@ -795,7 +793,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 bg-primary/20 text-primaryDark dark:text-primary rounded-full text-md font-bold tracking-wider mb-4 uppercase">
-             คำถามที่พบบ่อย
+              คำถามที่พบบ่อย
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">ตอบทุกคำถามเรื่องฝุ่น ครบจบในโพสต์เดียว</h2>
             <p className="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
@@ -803,232 +801,232 @@ export default function Home() {
             </p>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">1. เครื่องเติมอากาศ คืออะไร?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
-              <p>
-                เครื่องเติมอากาศคือระบบระบายอากาศแรงดันบวกที่ดึงอากาศภายนอกเข้ามา ผ่านการกรอง 6 ขั้นตอน (Pre-filter, ดักขน/ฝุ่นหยาบ,
-                Carbon, HEPA, ULPA, UVC) ก่อนอัดลมสะอาดเข้าสู่ห้อง ทำให้เกิดแรงดันบวกดันฝุ่น PM2.5 ออกจากรอยรั่วทุกจุด จึงรักษาค่าฝุ่นในห้องให้ใกล้ 0 ppm ตลอดเวลา
-              </p>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">2. เครื่องฟอกอากาศ vs. เครื่องเติมอากาศ ต่างกันอย่างไร?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-4">
-              <p>ตารางนี้ช่วยให้เห็นความต่างชัดเจน:</p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm text-left border border-gray-200 dark:border-gray-800">
-                  <thead className="bg-gray-50 dark:bg-gray-800/50 text-text-light dark:text-text-dark">
-                    <tr>
-                      <th className="p-3">คุณสมบัติ</th>
-                      <th className="p-3">เครื่องเติมอากาศ (Master House)</th>
-                      <th className="p-3">เครื่องฟอกอากาศทั่วไป</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-text-muted-light dark:text-text-muted-dark">
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">การทำงาน</td>
-                      <td className="p-3">เติมอากาศดีใหม่พร้อมไล่อากาศเสียออก</td>
-                      <td className="p-3">หมุนเวียนและฟอกอากาศเดิมภายในห้อง</td>
-                    </tr>
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">การป้องกันฝุ่น</td>
-                      <td className="p-3">สร้างแรงดันบวก กัน PM2.5 ไม่ให้เข้าบ้าน</td>
-                      <td className="p-3">ลด PM2.5 เฉพาะอากาศภายใน ฝุ่นใหม่ยังเข้าได้ตลอด</td>
-                    </tr>
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">คุณภาพอากาศ</td>
-                      <td className="p-3">เติมออกซิเจนใหม่ CO₂ ไม่สะสม</td>
-                      <td className="p-3">CO₂ สะสม อาจทำให้รู้สึกง่วงหรืออับ</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">3. เครื่องเติมอากาศ Master House มีกี่รุ่น?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-4">
-              <p>เราโฟกัส 4 รุ่นหลักที่ครอบคลุมทุกขนาดพื้นที่:</p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm text-left border border-gray-200 dark:border-gray-800">
-                  <thead className="bg-gray-50 dark:bg-gray-800/50 text-text-light dark:text-text-dark">
-                    <tr>
-                      <th className="p-3">รุ่น</th>
-                      <th className="p-3">พื้นที่แนะนำ</th>
-                      <th className="p-3">การกรอง</th>
-                      <th className="p-3">ประกันมอเตอร์</th>
-                      <th className="p-3">ราคาเริ่มต้น*</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-text-muted-light dark:text-text-muted-dark">
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">RRO 70 cfm</td>
-                      <td className="p-3">ไม่เกิน 30 ตร.ม.</td>
-                      <td className="p-3">6 ขั้นตอนครบ</td>
-                      <td className="p-3">5 ปี</td>
-                      <td className="p-3">฿27,500</td>
-                    </tr>
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">PRO 180 cfm</td>
-                      <td className="p-3">50-60 ตร.ม.</td>
-                      <td className="p-3">6 ขั้นตอนครบ</td>
-                      <td className="p-3">5 ปี</td>
-                      <td className="p-3">฿52,500</td>
-                    </tr>
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">STANDARD 200 cfm</td>
-                      <td className="p-3">60-70 ตร.ม.</td>
-                      <td className="p-3">2 ขั้นตอน</td>
-                      <td className="p-3">2 ปี</td>
-                      <td className="p-3">฿35,000</td>
-                    </tr>
-                    <tr className="border-t border-gray-200 dark:border-gray-700">
-                      <td className="p-3 font-semibold text-text-light dark:text-text-dark">STANDARD 380 cfm</td>
-                      <td className="p-3">100-120 ตร.ม.</td>
-                      <td className="p-3">2 ขั้นตอน</td>
-                      <td className="p-3">2 ปี</td>
-                      <td className="p-3">฿55,000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-xs text-text-muted-light dark:text-text-muted-dark">*ราคารวมติดตั้ง รุ่น PRO เหมาะพื้นที่ที่มีปัญหากลิ่นเผาหรือมลพิษหนักเพราะมี Carbon + ULPA + UVC ครบ</p>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">4. จะเลือกรุ่นอย่างไร?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
-              <p>เลือกตามขนาดห้องและปัญหากลิ่น (ติดตั้งแบบแยกห้องเหมือนแอร์):</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>≤30 ตร.ม.: RRO 70 cfm ราคา 27,500 บาท</li>
-                <li>50-60 ตร.ม.: PRO 180 cfm ราคา 52,500 บาท</li>
-                <li>60-70 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 200 cfm ราคา 35,000 บาท</li>
-                <li>พื้นที่รวม/แยก 2 ห้อง 100-120 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 380 cfm ราคา 55,000 บาท</li>
-              </ul>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">5. ตัวเครื่องกินไฟเยอะไหม?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
-              <p>ไม่ต้องกังวล! มอเตอร์พัดลมถูกออกแบบให้ประหยัดไฟ:</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>เปิดทุกวัน 8-10 ชม.: รุ่นเล็กตกอยู่ที่ ~100-120 บาท/เดือน</li>
-                <li>รุ่นใหญ่ประมาณ ~150-170 บาท/เดือน</li>
-              </ul>
-              <p>จึงคุ้มค่าสำหรับการเปิดต่อเนื่องเพื่อรักษาแรงดันบวกทั้งวัน</p>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">6. เครื่องเดียวจ่ายลมได้หลายห้องไหม?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-              ทำได้ โดยใช้เครื่องขนาดใหญ่แล้วออกแบบท่อแยกไป 2-3 ห้องพร้อมกัน ขึ้นอยู่กับพื้นที่รวมและการใช้งาน ทีมวิศวกรจะช่วยคำนวณให้สมดุลทั้งแรงดันและปริมาณลม
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">7. ต้องบำรุงรักษาอย่างไรและมีค่าใช้จ่ายเท่าไหร่?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
-              <p>โดยทั่วไปเปลี่ยนไส้กรองครบชุดทุก 2-3 ปี เพื่อลดฝุ่นสะสมและยืดอายุเครื่อง (ตัวอย่าง PREMIUM 70 cfm ตลอด 3 ปีเฉลี่ย ~7,000 บาท)</p>
-              <ul className="list-disc pl-6 space-y-1">
-                <li>Pre-filter ล้างทุก 3 เดือน (ไม่มีค่าใช้จ่าย)</li>
-                <li>ชุด Non-ULPA ทุก 12 เดือน (ประมาณ 4,000 บาท)</li>
-                <li>ULPA ทุก 24 เดือน (ประมาณ 3,000 บาท)</li>
-              </ul>
-              <p>ทีมบริการจะนัดหมายและดูแลตามรอบเพื่อให้ระบบทำงานเต็มประสิทธิภาพ</p>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">8. เสียงเครื่องดังไหม?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-2">
-              <p>เสียงเงียบกว่าพัดลมดูดอากาศในห้องน้ำ และยังมี “กล่องไซเรนเซอร์” ลดเสียงสะท้อนเพิ่มเติม</p>
-              <p>สามารถสลับโหมด Low ตอนนอนเพื่อความเงียบสูงสุด เครื่องทำงานเนียนไม่รบกวนการพักผ่อน</p>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">9. เปิด/ปิด หรือปรับสปีดอย่างไร?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
-              ใช้รีโมทไร้สายควบคุมได้จากในห้องนอน ปรับสปีดพัดลมและสั่งเปิด/ปิดได้ง่ายไม่ต้องเดินไปที่ตัวเครื่อง
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">10. เครื่องเติมอากาศในตลาดต่างกันแค่ไหน?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-2">
-              <p>แตกต่างทั้งเกรดวัสดุ ชนิดไส้กรอง และประสบการณ์ติดตั้ง ระบบของเราให้ความสำคัญกับคุณภาพอากาศภายนอกที่ต้องเข้าบ้าน จึงจัดเต็ม 6 ขั้นกรองตั้งแต่ตะแกรงลวด, Carbon, HEPA, ULPA จนถึง UVC ฆ่าเชื้อ</p>
-              <p>ลูกค้าจึงมั่นใจได้ว่าลมที่เข้าสู่ห้องสะอาด ปลอดกลิ่น และปลอดเชื้อ</p>
-            </div>
-          </details>
-          <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
-            <summary className="flex justify-between items-center cursor-pointer list-none">
-              <h3 className="text-lg font-bold text-text-light dark:text-text-dark">11. ทำไมต้องเลือกบริษัทมาสเตอร์เฮ้าส์?</h3>
-              <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
-                expand_more
-              </span>
-            </summary>
-            <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
-              <p>
-                เราเชี่ยวชาญระบบเติมอากาศและแรงดันบวก/ลบ ผ่านงานติดตั้งกว่า 1,200 ชุด ทั้งบ้านพัก โรงพยาบาล คลินิกทันตกรรม โรงเรียน และหน่วยงานราชการ
-                มีหน้าร้านให้ทดลองระบบจริง เปรียบเทียบไส้กรอง และห้องทดสอบแรงดันบวกก่อนตัดสินใจ
-              </p>
-              <div className="text-sm space-y-1">
-                <p>อย่าเพิ่งตัดสินใจ หากยังไม่ได้คุยกับเรา</p>
-                <p>085-495-6395 (คุณบอม) / 065-919-4403 (คุณเอ้)</p>
-                <p>บริษัท มาสเตอร์ เฮ้าส จำกัด 141/1 หมู่ 9 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ 50300</p>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">1. เครื่องเติมอากาศ คืออะไร?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
                 <p>
-                  แผนที่: <a className="text-primary hover:underline" href="https://maps.app.goo.gl/s57r6KaGEPCVq7acA" rel="noreferrer" target="_blank">Google Maps</a>
+                  เครื่องเติมอากาศคือระบบระบายอากาศแรงดันบวกที่ดึงอากาศภายนอกเข้ามา ผ่านการกรอง 6 ขั้นตอน (Pre-filter, ดักขน/ฝุ่นหยาบ,
+                  Carbon, HEPA, ULPA, UVC) ก่อนอัดลมสะอาดเข้าสู่ห้อง ทำให้เกิดแรงดันบวกดันฝุ่น PM2.5 ออกจากรอยรั่วทุกจุด จึงรักษาค่าฝุ่นในห้องให้ใกล้ 0 ppm ตลอดเวลา
                 </p>
               </div>
-            </div>
-          </details>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">2. เครื่องฟอกอากาศ vs. เครื่องเติมอากาศ ต่างกันอย่างไร?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-4">
+                <p>ตารางนี้ช่วยให้เห็นความต่างชัดเจน:</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left border border-gray-200 dark:border-gray-800">
+                    <thead className="bg-gray-50 dark:bg-gray-800/50 text-text-light dark:text-text-dark">
+                      <tr>
+                        <th className="p-3">คุณสมบัติ</th>
+                        <th className="p-3">เครื่องเติมอากาศ (Master House)</th>
+                        <th className="p-3">เครื่องฟอกอากาศทั่วไป</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-muted-light dark:text-text-muted-dark">
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">การทำงาน</td>
+                        <td className="p-3">เติมอากาศดีใหม่พร้อมไล่อากาศเสียออก</td>
+                        <td className="p-3">หมุนเวียนและฟอกอากาศเดิมภายในห้อง</td>
+                      </tr>
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">การป้องกันฝุ่น</td>
+                        <td className="p-3">สร้างแรงดันบวก กัน PM2.5 ไม่ให้เข้าบ้าน</td>
+                        <td className="p-3">ลด PM2.5 เฉพาะอากาศภายใน ฝุ่นใหม่ยังเข้าได้ตลอด</td>
+                      </tr>
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">คุณภาพอากาศ</td>
+                        <td className="p-3">เติมออกซิเจนใหม่ CO₂ ไม่สะสม</td>
+                        <td className="p-3">CO₂ สะสม อาจทำให้รู้สึกง่วงหรืออับ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">3. เครื่องเติมอากาศ Master House มีกี่รุ่น?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-4">
+                <p>เราโฟกัส 4 รุ่นหลักที่ครอบคลุมทุกขนาดพื้นที่:</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left border border-gray-200 dark:border-gray-800">
+                    <thead className="bg-gray-50 dark:bg-gray-800/50 text-text-light dark:text-text-dark">
+                      <tr>
+                        <th className="p-3">รุ่น</th>
+                        <th className="p-3">พื้นที่แนะนำ</th>
+                        <th className="p-3">การกรอง</th>
+                        <th className="p-3">ประกันมอเตอร์</th>
+                        <th className="p-3">ราคาเริ่มต้น*</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-muted-light dark:text-text-muted-dark">
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">RRO 70 cfm</td>
+                        <td className="p-3">ไม่เกิน 30 ตร.ม.</td>
+                        <td className="p-3">6 ขั้นตอนครบ</td>
+                        <td className="p-3">5 ปี</td>
+                        <td className="p-3">฿27,500</td>
+                      </tr>
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">PRO 180 cfm</td>
+                        <td className="p-3">50-60 ตร.ม.</td>
+                        <td className="p-3">6 ขั้นตอนครบ</td>
+                        <td className="p-3">5 ปี</td>
+                        <td className="p-3">฿52,500</td>
+                      </tr>
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">STANDARD 200 cfm</td>
+                        <td className="p-3">60-70 ตร.ม.</td>
+                        <td className="p-3">2 ขั้นตอน</td>
+                        <td className="p-3">2 ปี</td>
+                        <td className="p-3">฿35,000</td>
+                      </tr>
+                      <tr className="border-t border-gray-200 dark:border-gray-700">
+                        <td className="p-3 font-semibold text-text-light dark:text-text-dark">STANDARD 380 cfm</td>
+                        <td className="p-3">100-120 ตร.ม.</td>
+                        <td className="p-3">2 ขั้นตอน</td>
+                        <td className="p-3">2 ปี</td>
+                        <td className="p-3">฿55,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-text-muted-light dark:text-text-muted-dark">*ราคารวมติดตั้ง รุ่น PRO เหมาะพื้นที่ที่มีปัญหากลิ่นเผาหรือมลพิษหนักเพราะมี Carbon + ULPA + UVC ครบ</p>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">4. จะเลือกรุ่นอย่างไร?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+                <p>เลือกตามขนาดห้องและปัญหากลิ่น (ติดตั้งแบบแยกห้องเหมือนแอร์):</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>≤30 ตร.ม.: RRO 70 cfm ราคา 27,500 บาท</li>
+                  <li>50-60 ตร.ม.: PRO 180 cfm ราคา 52,500 บาท</li>
+                  <li>60-70 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 200 cfm ราคา 35,000 บาท</li>
+                  <li>พื้นที่รวม/แยก 2 ห้อง 100-120 ตร.ม. และไม่มีปัญหากลิ่นหนัก: STANDARD 380 cfm ราคา 55,000 บาท</li>
+                </ul>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">5. ตัวเครื่องกินไฟเยอะไหม?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+                <p>ไม่ต้องกังวล! มอเตอร์พัดลมถูกออกแบบให้ประหยัดไฟ:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>เปิดทุกวัน 8-10 ชม.: รุ่นเล็กตกอยู่ที่ ~100-120 บาท/เดือน</li>
+                  <li>รุ่นใหญ่ประมาณ ~150-170 บาท/เดือน</li>
+                </ul>
+                <p>จึงคุ้มค่าสำหรับการเปิดต่อเนื่องเพื่อรักษาแรงดันบวกทั้งวัน</p>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">6. เครื่องเดียวจ่ายลมได้หลายห้องไหม?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                ทำได้ โดยใช้เครื่องขนาดใหญ่แล้วออกแบบท่อแยกไป 2-3 ห้องพร้อมกัน ขึ้นอยู่กับพื้นที่รวมและการใช้งาน ทีมวิศวกรจะช่วยคำนวณให้สมดุลทั้งแรงดันและปริมาณลม
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">7. ต้องบำรุงรักษาอย่างไรและมีค่าใช้จ่ายเท่าไหร่?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+                <p>โดยทั่วไปเปลี่ยนไส้กรองครบชุดทุก 2-3 ปี เพื่อลดฝุ่นสะสมและยืดอายุเครื่อง (ตัวอย่าง PREMIUM 70 cfm ตลอด 3 ปีเฉลี่ย ~7,000 บาท)</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Pre-filter ล้างทุก 3 เดือน (ไม่มีค่าใช้จ่าย)</li>
+                  <li>ชุด Non-ULPA ทุก 12 เดือน (ประมาณ 4,000 บาท)</li>
+                  <li>ULPA ทุก 24 เดือน (ประมาณ 3,000 บาท)</li>
+                </ul>
+                <p>ทีมบริการจะนัดหมายและดูแลตามรอบเพื่อให้ระบบทำงานเต็มประสิทธิภาพ</p>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">8. เสียงเครื่องดังไหม?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-2">
+                <p>เสียงเงียบกว่าพัดลมดูดอากาศในห้องน้ำ และยังมี “กล่องไซเรนเซอร์” ลดเสียงสะท้อนเพิ่มเติม</p>
+                <p>สามารถสลับโหมด Low ตอนนอนเพื่อความเงียบสูงสุด เครื่องทำงานเนียนไม่รบกวนการพักผ่อน</p>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">9. เปิด/ปิด หรือปรับสปีดอย่างไร?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                ใช้รีโมทไร้สายควบคุมได้จากในห้องนอน ปรับสปีดพัดลมและสั่งเปิด/ปิดได้ง่ายไม่ต้องเดินไปที่ตัวเครื่อง
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">10. เครื่องเติมอากาศในตลาดต่างกันแค่ไหน?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-2">
+                <p>แตกต่างทั้งเกรดวัสดุ ชนิดไส้กรอง และประสบการณ์ติดตั้ง ระบบของเราให้ความสำคัญกับคุณภาพอากาศภายนอกที่ต้องเข้าบ้าน จึงจัดเต็ม 6 ขั้นกรองตั้งแต่ตะแกรงลวด, Carbon, HEPA, ULPA จนถึง UVC ฆ่าเชื้อ</p>
+                <p>ลูกค้าจึงมั่นใจได้ว่าลมที่เข้าสู่ห้องสะอาด ปลอดกลิ่น และปลอดเชื้อ</p>
+              </div>
+            </details>
+            <details className="group rounded-2xl bg-white/80 dark:bg-slate-900/70 p-6 border border-white/40 dark:border-slate-800/60 backdrop-blur hover:shadow-xl transition-all">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-text-light dark:text-text-dark">11. ทำไมต้องเลือกบริษัทมาสเตอร์เฮ้าส์?</h3>
+                <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+              </summary>
+              <div className="mt-4 text-text-muted-light dark:text-text-muted-dark leading-relaxed space-y-3">
+                <p>
+                  เราเชี่ยวชาญระบบเติมอากาศและแรงดันบวก/ลบ ผ่านงานติดตั้งกว่า 1,200 ชุด ทั้งบ้านพัก โรงพยาบาล คลินิกทันตกรรม โรงเรียน และหน่วยงานราชการ
+                  มีหน้าร้านให้ทดลองระบบจริง เปรียบเทียบไส้กรอง และห้องทดสอบแรงดันบวกก่อนตัดสินใจ
+                </p>
+                <div className="text-sm space-y-1">
+                  <p>อย่าเพิ่งตัดสินใจ หากยังไม่ได้คุยกับเรา</p>
+                  <p>085-495-6395 (คุณบอม) / 065-919-4403 (คุณเอ้)</p>
+                  <p>บริษัท มาสเตอร์ เฮ้าส จำกัด 141/1 หมู่ 9 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ 50300</p>
+                  <p>
+                    แผนที่: <a className="text-primary hover:underline" href="https://maps.app.goo.gl/s57r6KaGEPCVq7acA" rel="noreferrer" target="_blank">Google Maps</a>
+                  </p>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -1097,11 +1095,10 @@ export default function Home() {
                   key={`dot-${index}`}
                   type="button"
                   onClick={() => setReviewSlideIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === reviewSlideIndex
+                  className={`w-2 h-2 rounded-full transition-all ${index === reviewSlideIndex
                       ? "bg-primary w-6"
                       : "bg-slate-300 dark:bg-slate-600 hover:bg-primary/50"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -1263,7 +1260,7 @@ export default function Home() {
               />
             </div>
             <p className="text-white/70 mb-4">"อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง"
-ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน</p>
+              ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน</p>
           </div>
           <div className="md:ml-15 ml-0">
             <h4 className="font-semibold mb-3  text-white">ติดต่อเรา</h4>
@@ -1287,7 +1284,7 @@ export default function Home() {
               >
                 <span className="w-6 h-6 flex items-center justify-center bg-[#06C755] rounded-full">
                   <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
                   </svg>
                 </span>
                 <span className="group-hover:underline text-green-500">@masterhouse</span>
