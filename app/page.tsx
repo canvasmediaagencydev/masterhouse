@@ -1,11 +1,40 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [reviewSlideIndex, setReviewSlideIndex] = useState(0);
+
+  const customerReviews = Array.from({ length: 9 }, (_, i) => `/csreview/${i + 1}.png`);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setReviewSlideIndex((prev) => (prev + 1) % customerReviews.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [customerReviews.length]);
+
+  const navLinks = [
+    { name: "บริการของเรา", href: "#services" },
+    { name: "ผลิตภัณฑ์ของเรา", href: "#products" },
+    { name: "คำถามที่พบบ่อย", href: "#faq" },
+    { name: "รีวิวจากลูกค้า", href: "#reviews" },
+    { name: "ผลงานการติดตั้ง", href: "#installation" },
+    { name: "วีดีโอแนะนำ", href: "#video" },
+  ];
   const galleryFolder = "ภาพการติดตั้งและรีวิวการใช้งานจริง";
 
   const installationFiles = [
@@ -25,14 +54,6 @@ export default function Home() {
     caption: file.replace(/\.[^.]+$/, ""),
   }));
 
-  const reviewFiles = [
-    "REVIEW 1.jpg",
-    "REVIEW2.png",
-  ];
-  const reviewImages = reviewFiles.map((file) => ({
-    src: encodeURI(`/gal/${galleryFolder}/${file}`),
-    caption: file.replace(/\.[^.]+$/, ""),
-  }));
   const serviceFolder = "/service-20260105T101027Z-1-001/service";
   const lineLink = "https://lin.ee/ahTlruO";
   const lineHandle = "@masterhouse";
@@ -61,10 +82,6 @@ export default function Home() {
       image: `${serviceFolder}/3.png`,
     },
   ];
-  const partnerLogos = [
-    { src: "/o2-airflow.jpg", alt: "O2 Airflow logo", sizeClass: "max-h-32" },
-    { src: "/smile-o2.jpg", alt: "Smile O2 logo", sizeClass: "max-h-44" },
-  ];
   const facebookContacts = [
     { name: "O2 AirFlow", url: "https://www.facebook.com/O2airflow" },
     { name: "Smile O2", url: "https://www.facebook.com/smileO2cm" },
@@ -73,40 +90,118 @@ export default function Home() {
 
   return (
     <main className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
-      <section className="relative py-24 overflow-hidden" id="partners">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/70 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/15 to-transparent blur-3xl" />
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.25) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+      {/* Navbar */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-24">
+            {/* Logos */}
+            <a href="#services" className="flex items-center gap-3 shrink-0">
+              <img
+                src="/master-house-logo.jpg"
+                alt="Master House logo"
+                className="h-10 sm:h-14 w-auto rounded-lg shadow-sm"
+              />
+              <img
+                src="/o2-airflow.jpg"
+                alt="O2 Airflow logo"
+                className="h-8 sm:h-12 w-auto rounded-lg shadow-sm"
+              />
+              <img
+                src="/smile-o2.jpg"
+                alt="Smile O2 logo"
+                className="h-8 sm:h-12 w-auto rounded-lg shadow-sm"
+              />
+            </a>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-gradient-to-r from-primary to-primaryDark text-white text-sm md:text-base tracking-[0.35em] uppercase font-semibold shadow-xl shadow-primary/30">
-              <span className="w-3 h-3 rounded-full bg-white animate-pulse" />
-              Powered by Master House
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark mt-5">
-              ระบบ O2 Airflow ที่ได้รับความไว้วางใจจากพันธมิตรคุณภาพ
-            </h3>
-            <p className="text-text-muted-light dark:text-text-muted-dark mt-4">
-              ติดตั้งและออกแบบโดยทีม Master House พร้อมดูแลแบรนด์ที่โฟกัสคุณภาพอากาศอย่างจริงจัง
-            </p>
-          </div>
-          <div className="mt-12 w-full flex flex-col sm:flex-row items-stretch justify-between gap-6">
-            {partnerLogos.map((logo) => (
-              <div
-                key={logo.src}
-                className="group relative flex-1 min-h-[10rem] rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur flex items-center justify-center overflow-hidden"
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary-light rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <a
+                href={lineLink}
+                target="_blank"
+                rel="noreferrer"
+                className="ml-2 px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-dark rounded-lg transition-colors shadow-md hover:shadow-lg"
               >
-                <img
-                  alt={logo.alt}
-                  className={`max-w-[75%] object-contain transition-transform duration-300 group-hover:scale-105 ${logo.sizeClass ?? "max-h-32"}`}
-                  src={logo.src}
-                />
-              </div>
-            ))}
+                ติดต่อเรา
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+              <span className="material-symbols-outlined text-2xl">
+                {mobileMenuOpen ? "close" : "menu"}
+              </span>
+            </button>
           </div>
         </div>
-      </section>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden transition-all duration-300 overflow-hidden ${
+            mobileMenuOpen ? "max-h-screen" : "max-h-0"
+          }`}
+        >
+          <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-700 px-4 py-4 space-y-1">
+            {/* Mobile Logos */}
+            <div className="flex items-center justify-center gap-4 pb-4 mb-4 border-b border-slate-200 dark:border-slate-700">
+              <img
+                src="/master-house-logo.jpg"
+                alt="Master House logo"
+                className="h-14 w-auto rounded-lg shadow-sm"
+              />
+              <img
+                src="/o2-airflow.jpg"
+                alt="O2 Airflow logo"
+                className="h-12 w-auto rounded-lg shadow-sm"
+              />
+              <img
+                src="/smile-o2.jpg"
+                alt="Smile O2 logo"
+                className="h-12 w-auto rounded-lg shadow-sm"
+              />
+            </div>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary-light rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={lineLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block w-full mt-2 px-4 py-3 text-base font-medium text-white bg-primary hover:bg-primary-dark rounded-lg transition-colors shadow-md text-center"
+            >
+              ติดต่อเรา
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Spacer for fixed navbar */}
+      <div className="h-24" />
 
       <section className="relative py-24 overflow-hidden" id="services">
         {/* Background gradient */}
@@ -257,10 +352,10 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿27,500</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <a href={lineLink} target="_blank" rel="noreferrer" className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -345,10 +440,10 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿52,500</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <a href={lineLink} target="_blank" rel="noreferrer" className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -358,7 +453,7 @@ export default function Home() {
                 <img
                   alt="MH-200 cfm Eco"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
-                  src="/products/200.jpg"
+                  src="/products/200.png"
                 />
                 
               </div>
@@ -433,10 +528,10 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿35,000</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <a href={lineLink} target="_blank" rel="noreferrer" className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -446,7 +541,7 @@ export default function Home() {
                 <img
                   alt="MH-380 cfm Eco"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
-                  src="/products/380 (แก้ไข).jpg"
+                  src="/products/380.png"
                 />
           
               </div>
@@ -521,10 +616,10 @@ export default function Home() {
                     <span className="text-sm text-text-muted-light dark:text-text-muted-dark">ราคาเริ่มต้น</span>
                     <span className="text-3xl font-bold text-primary">฿55,000</span>
                   </div>
-                  <button className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
+                  <a href={lineLink} target="_blank" rel="noreferrer" className="w-full bg-gradient-to-r from-primary to-primaryDark text-white px-6 py-3.5 rounded-2xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105">
                     <span>ติดต่อเรา</span>
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -567,7 +662,7 @@ export default function Home() {
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-primary to-primaryDark text-white shadow-lg shadow-primary/30">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="material-symbols-outlined text-2xl">shield_moon</span>
-                    <p className="text-sm font-semibold uppercase tracking-widest">98% Odor Cut</p>
+                    <p className="text-sm font-semibold uppercase tracking-widest">98%</p>
                   </div>
                   <p className="text-sm text-white/80">
                     ป้องกันกลิ่นไม่พึงประสงค์จากภายนอก และช่วยให้การพักผ่อนในเวลากลางคืนสงบขึ้นทันที
@@ -585,11 +680,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-text-muted-light dark:text-text-muted-dark">ลดฝุ่น PM2.5</p>
-                    <p className="text-4xl font-bold text-text-light dark:text-text-dark">-85%</p>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-text-muted-light dark:text-text-muted-dark">การหมุนเวียนอากาศ</p>
-                    <p className="text-4xl font-bold text-primary">+4X</p>
+                    <p className="text-4xl font-bold text-text-light dark:text-text-dark">99.9995%</p>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -623,6 +714,74 @@ export default function Home() {
                 <p className="text-sm text-text-muted-light dark:text-text-muted-dark text-center sm:text-left">
                   สำรวจหน้างานและออกแบบระบบที่ตอบโจทย์ปัญหาอากาศของบ้านคุณจริง ๆ ก่อนเริ่มติดตั้ง
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SmileO2 vs O2Airflow Section */}
+      <section className="relative py-24 overflow-hidden" id="brands">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-indigo-950/30 dark:to-slate-900" />
+        <div className="absolute top-0 left-1/4 w-80 h-80 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+         
+            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4">
+              SmileO2 vs O2Airflow ต่างกันอย่างไร?
+            </h2>
+            <p className="text-text-muted-light dark:text-text-muted-dark max-w-4xl mx-auto mb-4">
+              SmileO2 และ O2Airflow เป็นเครื่องเติมอากาศระบบ PPV (Positive Pressure Ventilation) เหมือนกัน หน้าที่หลักคือการดึงอากาศจากภายนอก ผ่านการกรองประสิทธิภาพสูง แล้วเติมอากาศสะอาดเข้าสู่ภายในอาคารด้วยแรงดันบวก ช่วยลดการสะสมของฝุ่น PM2.5 กลิ่นอับ และก๊าซคาร์บอนไดออกไซด์ (CO₂) ภายในบ้านหรืออาคารได้อย่างมีประสิทธิภาพ
+            </p>
+            <p className="text-primary font-semibold">
+              ความแตกต่างหลักของทั้งสองแบรนด์ อยู่ที่แนวทางการใช้งานและเทคโนโลยีเสริม
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* SmileO2 Card */}
+            <div className="group relative rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur p-8 hover:shadow-2xl transition-all">
+              <div className="flex items-center gap-4 mb-6">
+                <img
+                  src="/smile-o2.jpg"
+                  alt="Smile O2 logo"
+                  className="h-16 w-auto rounded-xl shadow-md"
+                />
+                <h3 className="text-2xl font-bold text-text-light dark:text-text-dark">SmileO2</h3>
+              </div>
+              <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark">
+                <p className="leading-relaxed">
+                  เป็นเทคโนโลยี<strong className="text-text-light dark:text-text-dark">ห้องคลีนรูม (Clean Room)</strong> สำหรับเติมออกซิเจน เติมอากาศบริสุทธิ์ (Fresh Air) ที่เหมาะทั้งห้องนอน ห้องนั่งเล่น ห้องทำงาน ห้องประชุม สำนักงาน โรงงาน ห้องปลอดเชื้อ ห้องแลป ร้านยาเวชภัณฑ์ หรือพื้นที่ปิดต่างๆ
+                </p>
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
+                  <p className="leading-relaxed">
+                    โดยระบบจะเติมอากาศจากภายนอกผ่านระบบกรองอากาศเติมเข้าไปในห้องโดยตรง และผลักดันอากาศเสียภายในออกไปตามช่องต่างๆ ทำให้ในห้องจะมีแต่<strong className="text-primary">อากาศบริสุทธิ์อยู่ตลอดเวลา</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* O2Airflow Card */}
+            <div className="group relative rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur p-8 hover:shadow-2xl transition-all">
+              <div className="flex items-center gap-4 mb-6">
+                <img
+                  src="/o2-airflow.jpg"
+                  alt="O2 Airflow logo"
+                  className="h-16 w-auto rounded-xl shadow-md"
+                />
+                <h3 className="text-2xl font-bold text-text-light dark:text-text-dark">O2Airflow</h3>
+              </div>
+              <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark">
+                <p className="leading-relaxed">
+                  เพิ่มความสะดวกด้วย<strong className="text-text-light dark:text-text-dark">เทคโนโลยี Mobile Application</strong> ผู้ใช้งานสามารถควบคุมการทำงานผ่านมือถือ ตั้งเวลาเปิด-ปิดอัตโนมัติ และปรับการใช้งานให้สอดคล้องกับไลฟ์สไตล์ได้ง่ายขึ้น
+                </p>
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
+                  <p className="leading-relaxed">
+                    เหมาะกับผู้ที่ชอบความทันสมัย และต้องการ<strong className="text-primary">ควบคุมระบบอากาศภายในบ้านได้แบบเรียลไทม์</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -893,18 +1052,60 @@ export default function Home() {
               ความประทับใจจากลูกค้าที่ใช้งานเครื่องเติมอากาศ Master House
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {reviewImages.map(({ src, caption }, index) => (
-              <button
-                key={`review-${caption}-${index}`}
-                className="group relative rounded-3xl overflow-hidden bg-white/85 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/60 shadow-xl backdrop-blur transition-all hover:-translate-y-1 hover:shadow-2xl"
-                type="button"
-                onClick={() => setActiveImage(src)}
+          {/* Slider */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${reviewSlideIndex * (100 / 3)}%)` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/0 via-transparent to-white/20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
-                <img alt={caption} className="w-full h-auto object-cover" src={src} />
-              </button>
-            ))}
+                {customerReviews.map((src, index) => (
+                  <button
+                    key={`review-${index}`}
+                    className="w-1/3 flex-shrink-0 px-2"
+                    type="button"
+                    onClick={() => setActiveImage(src)}
+                  >
+                    <div className="group relative rounded-2xl overflow-hidden bg-white/85 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/60 shadow-xl backdrop-blur transition-all hover:-translate-y-1 hover:shadow-2xl">
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/0 via-transparent to-white/20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <img alt={`รีวิวจากลูกค้า ${index + 1}`} className="w-full h-auto object-cover" src={src} />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              type="button"
+              onClick={() => setReviewSlideIndex((prev) => (prev - 1 + customerReviews.length) % customerReviews.length)}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-white/90 dark:bg-slate-800/90 shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+            >
+              <span className="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setReviewSlideIndex((prev) => (prev + 1) % customerReviews.length)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-white/90 dark:bg-slate-800/90 shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+            >
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-6">
+              {customerReviews.map((_, index) => (
+                <button
+                  key={`dot-${index}`}
+                  type="button"
+                  onClick={() => setReviewSlideIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === reviewSlideIndex
+                      ? "bg-primary w-6"
+                      : "bg-slate-300 dark:bg-slate-600 hover:bg-primary/50"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1002,9 +1203,11 @@ export default function Home() {
           <div className="text-center mt-10">
             <a
               className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-all hover:bg-primaryDark"
-              href="tel:+66854956395"
+              href={lineLink}
+              target="_blank"
+              rel="noreferrer"
             >
-              <span className="material-symbols-outlined text-base">call</span>
+              <span className="material-symbols-outlined text-base">chat</span>
               นัดประเมินติดตั้งทันที
             </a>
           </div>
@@ -1030,7 +1233,7 @@ export default function Home() {
             <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_35px_120px_rgba(37,99,235,0.25)] border border-white/40 dark:border-slate-800/60 bg-black/50 backdrop-blur" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/FGSsiL3qxzM"
+                src="https://www.youtube.com/embed/CJRVnrjmq1I"
                 title="Master House - เครื่องเติมอากาศ"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -1043,14 +1246,24 @@ export default function Home() {
       <footer className="bg-slate-950 text-white py-16">
         <div className="container mx-auto px-6 grid gap-10 md:grid-cols-3">
           <div>
-            <div className="mb-4">
+            <div className="flex items-center gap-4 mb-4">
               <img
-                alt="Master House Company Limited logo"
-                className="h-20 w-auto object-contain"
+                alt="Master House logo"
+                className="h-16 w-auto object-contain rounded-lg"
                 src="/master-house-logo.jpg"
               />
+              <img
+                alt="O2 Airflow logo"
+                className="h-14 w-auto object-contain rounded-lg"
+                src="/o2-airflow.jpg"
+              />
+              <img
+                alt="Smile O2 logo"
+                className="h-14 w-auto object-contain rounded-lg"
+                src="/smile-o2.jpg"
+              />
             </div>
-            <p className="text-white/70 mb-4">“อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง”
+            <p className="text-white/70 mb-4">"อย่าเพิ่งตัดสินใจติดตั้งระบบอากาศ หากคุณยังไม่ได้ปรึกษาผู้เชี่ยวชาญด้านระบบอากาศโดยตรง"
 ทีม Master House พร้อมประเมินปัญหาอากาศอับ ฝุ่น PM2.5 และกลิ่นรบกวน เพื่อออกแบบระบบที่ทำให้คุณหายใจโล่งขึ้นจริงในทุกห้องของบ้าน</p>
             <a className="inline-flex items-center gap-2 text-primary font-semibold" href={lineLink} rel="noreferrer" target="_blank">
               <span className="material-symbols-outlined">chat</span>
