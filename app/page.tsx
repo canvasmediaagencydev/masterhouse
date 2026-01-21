@@ -35,23 +35,10 @@ export default function Home() {
     { name: "ผลงานการติดตั้ง", href: "#installation" },
     { name: "วีดีโอแนะนำ", href: "#video" },
   ];
-  const galleryFolder = "ภาพการติดตั้งและรีวิวการใช้งานจริง";
-
-  const installationFiles = [
-    "ติดตั้ง 1 .png",
-    "ติดตั้ง 2 .png",
-    "ติดตั้ง 3.png",
-    "ติดตั้ง 4.jpg",
-    "ติดตั้ง 5.jpg",
-    "ติดตั้ง 6.jpg",
-    "ติดตั้ง 7.jpg",
-    "ติดตั้ง 8.png",
-    "ติดตั้ง 9.jpg",
-    "ติดตั้ง 10.png",
-  ];
-  const installationImages = installationFiles.map((file) => ({
-    src: encodeURI(`/gal/${galleryFolder}/${file}`),
-    caption: file.replace(/\.[^.]+$/, ""),
+  const installationFolder = "/ผลงานการติดตั้ง-20260121T012815Z-1-001/ผลงานการติดตั้ง";
+  const installationImages = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22].map((num) => ({
+    src: encodeURI(`${installationFolder}/${num}.png`),
+    caption: `ผลงานการติดตั้ง ${num}`,
   }));
 
   const serviceFolder = "/service-20260105T101027Z-1-001/service";
@@ -275,7 +262,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="MH-70 cfm Pro"
+                  alt="PRO 70 CFM"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/70 (1).png"
                 />
@@ -283,7 +270,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-70 cfm Pro</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">PRO 70 CFM</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">verified</span>
                     <span>ประสิทธิภาพสูง</span>
@@ -363,7 +350,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="MH-180 cfm Pro"
+                  alt="PRO 180 CFM"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/180 (1).png"
                 />
@@ -371,7 +358,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-180 cfm Pro</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">PRO 180 CFM</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">verified</span>
                     <span>ประสิทธิภาพสูง</span>
@@ -451,7 +438,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="MH-200 cfm Eco"
+                  alt="STANDARD 200 CFM"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/200.png"
                 />
@@ -459,7 +446,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-200 cfm Eco</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">STANDARD 200 CFM</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">star</span>
                     <span>มาตรฐาน</span>
@@ -539,7 +526,7 @@ export default function Home() {
               <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                 <div className="absolute inset-0 bg-primary/5" />
                 <img
-                  alt="MH-380 cfm Eco"
+                  alt="STANDARD 380 CFM"
                   className="relative w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-6"
                   src="/products/380.png"
                 />
@@ -547,7 +534,7 @@ export default function Home() {
               </div>
               <div className="p-6 space-y-5">
                 <div>
-                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">MH-380 cfm Eco</h3>
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2 group-hover:text-primary transition-colors">STANDARD 380 CFM</h3>
                   <div className="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark">
                     <span className="material-symbols-outlined text-base text-primary">apartment</span>
                     <span>พื้นที่ขนาดใหญ่</span>
@@ -745,7 +732,7 @@ export default function Home() {
             <div className="group relative rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur p-8 hover:shadow-2xl transition-all">
               <div className="flex items-center gap-4 mb-6">
                 <img
-                  src="/smile-o2.jpg"
+                  src="/o2-airflow.jpg"
                   alt="Smile O2 logo"
                   className="h-16 w-auto rounded-xl shadow-md"
                 />
@@ -767,7 +754,7 @@ export default function Home() {
             <div className="group relative rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-white/50 dark:border-slate-800/70 shadow-xl backdrop-blur p-8 hover:shadow-2xl transition-all">
               <div className="flex items-center gap-4 mb-6">
                 <img
-                  src="/o2-airflow.jpg"
+                  src="/smile-o2.jpg"
                   alt="O2 Airflow logo"
                   className="h-16 w-auto rounded-xl shadow-md"
                 />
